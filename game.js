@@ -1,3 +1,17 @@
+$( document ).tooltip({
+    position: {
+        my: "center top-10",
+        at: "center top",
+        using: function( position, feedback ) {
+            $( this ).css( position );
+            $( "<div>" )
+                .addClass( "arrow" )
+                .addClass( feedback.vertical )
+                .addClass( feedback.horizontal )
+                .appendTo( this );
+        }
+    }
+});
 $(function () {
         $(".element").draggable({ revert: "invalid",
             cursor: "pointer",
@@ -23,6 +37,12 @@ $(function () {
                     $("#step2_沉沙处理").animate({opacity: 1}, true)
                     $("#step1_e沉砂池").remove()
                     }
+                else if(elements==="step2_e沉淀池")
+                {
+                    $("#step3_沉淀池").animate({opacity:1},true)
+                    $("#step3_沉淀物").animate({opacity:1},true)
+                    $("#step2_e沉淀池").remove()
+                }
                 }
         });
         $("#dragstep1_button").click(function () {
@@ -33,6 +53,25 @@ $(function () {
                 $("#dragstep1_button").hide();
             }
         })
+    $("#step1_解释确定").click(function () {
+        $("#step1_interpret").fadeOut(500);
+        $("#step1").fadeOut(500);
+        $("#step2").fadeIn(2000);
+    })
+    $("#dragstep2_button").click(function () {
+        var step1_nxt=$("#step3_沉淀池").css("opacity")+$("#step3_沉淀物").css("opacity");
+        if(step1_nxt=="11")
+        {
+            $("#step2_interpret").fadeIn(4000);
+            $("#dragstep2_button").hide();
+        }
+    })
+    $("#step2_排放确定").click(function () {
+        $("#step2_interpret").fadeOut(500);
+        $("#step2").fadeOut(500);
+        $("#排放").fadeIn(2000);
+        $("#排放1").fadeIn(2000);
+    })
 
 
 })

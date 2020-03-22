@@ -58,7 +58,7 @@
                 display: block;
                 margin-left: 5vw;
                 width: 90vw;
-                height: 450px;
+                height: 400px;
                 margin-top: auto;
             }
             .layer
@@ -164,13 +164,41 @@
                     步骤1：预处理
                 </div>
                 <div id="step1_拖动区">
-                    <img src="images/element/栅格.png" id="step1_e栅格"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
-                    <img src="images/element/沉砂池.png" id="step1_e沉砂池" class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative">
+                    <img src="images/element/栅格.png" id="step1_e栅格"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="格栅">
+                    <img src="images/element/沉砂池.png" id="step1_e沉砂池" class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative" title="沉砂池">
                 </div>
                 <div id="dragstep1_button" style="text-align: center; margin-top: 200px">
                     <button class= "ui grey basic button">确定</button>
                 </div>
+            </div>
 
+            <div id="step2" class="appear" style="display: none">
+                <div class="drag_title">
+                    步骤2：一级处理
+                </div>
+                <div id="step2_拖动区" >
+                    <img src="images/element/沉淀池.png" id="step2_e沉淀池"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="沉淀池">
+                </div>
+                <div id="dragstep2_button" style="text-align: center; margin-top: 200px">
+                    <button class= "ui grey basic button">确定</button>
+                </div>
+            </div>
+
+            <div id="排放" class="appear" style="display: none">
+                <div class="drag_title">
+                    排放：
+                </div>
+            </div>
+            <div id="step3" class="appear" style="display: none">
+                <div class="drag_title">
+                    步骤3:二级处理-活性污泥处理法
+                </div>
+                <div id="step3-1_拖动区" >
+                    <img src="images/element/曝气池.png" id="step3-1_曝气池"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
+                </div>
+                <div id="dragstep3-1_button" style="text-align: center; margin-top: 200px">
+                    <button class= "ui grey basic button">确定</button>
+                </div>
             </div>
         </div>
         <div id="步骤解释" class="step_ip">
@@ -180,14 +208,35 @@
                     格栅处理的目的是截流大块物质以保护后续水泵管线、设备的正常运行。
                 </p>
                 <p>
-                    沉砂处理的目的是沉降污水中裹携的砂、石与大块颗粒物，防止造成设施淤砂，造成磨损堵塞，影响管线设备的正常运行.
+                    沉砂处理的目的是沉降污水中裹携的砂、石与大块颗粒物，防止造成设施淤砂，造成磨损堵塞，影响管线设备的正常运行。
                 </p>
+                <div id="step1_解释确定" style="text-align: center; margin-top: 15px">
+                    <button class= "ui grey basic button">下一步</button>
+                </div>
+            </div>
+            <div id="step2_interpret" class="ui text container ui raised segment" style="display: none">
+                <p>
+                    一级处理工艺主要是初级沉淀池，目的是将污水中悬浮物尽可能地沉降去除，一般初次沉淀池可去除城市污水中约 25% 的 BOD5（五日生化需氧量）以及近 50% 的 SS（悬浮物）。
+                </p>
+                <div id="step2_解释确定" style="text-align: center; margin-top: 15px">
+                    <button class= "ui grey basic button" id="step2_二级处理确定">进行二级处理</button>
+                    <button class= "ui grey basic button" id="step2_排放确定">排放</button>
+                </div>
+            </div>
+            <div id="排放1" class="ui text container ui raised segment" style="display: none">
+                <p style="text-align: center">
+                    很遗憾，污水处理未达到排放标准！污水中仍然存在胶状有机物、氧化物、硫化物等有毒物质，请进行二级处理。
+                </p>
+                <div id="排放1_确定" style="text-align: center; margin-top: 15px">
+                    <button class= "ui grey basic button">进行二级处理</button>
+                </div>
             </div>
         </div>
 
     </div>
 
 </div>
+
 <script src ="game.js"></script>
 </body>
 </html>
