@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>污水资源化！</title>
+    <link rel="stylesheet" href="dist/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <script src="dist/semantic.min.js"></script>
+    <script src="dist/jquery.ui.touch-punch.js"></script>
+    <link rel="stylesheet" href="game.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body{
+            background-color: white;
+            font-family: Helvetica,Arial,sans-serif;
+            font-size: 19px;
+            width:100%;
+        }
+        p{
+            font-size: 18px;
+            font-weight: 300;
+            margin:22px 0 0 0;
+            line-height: 2;
+            text-align: justify;
+            color: #3d3d40;
+        }
+        #game1
+        {
+            height: 750px;
+        }
+        .ui.text.container
+        {
+           padding:1.5em;
+            background-color: rgba(186,227,255,0.13);
+        }
+        .mainPara
+        {
+            text-indent: 2em;
+        }
+        @media screen and (max-width: 700px) {
+            .background{
+                position:absolute;
+                z-index: -1;
+                display: block;
+                margin-left: 5vw;
+                width: 90vw;
+                height: 450px;
+                margin-top: auto;
+            }
+            .layer
+            {
+                position:absolute;
+                z-index: 1;
+                display: block;
+                margin-left: 5vw;
+                width: 90vw;
+                height: 450px;
+                margin-top: auto;
+                opacity: 0;
+            }
+            #drag
+            {
+                position: relative;
+                width: 30vw;
+            }
+            .appear
+            {
+                position: absolute;
+                left: 1vw;
+                top: 450px;
+                width: 100vw;
+            }
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body style="cursor: auto">
+<div class="ui text container">
+    <p style="font-weight: 400; text-align: center">
+        嘿，你家那边干净的淡水够用吗？
+    </p>
+    <p class="mainPara">
+        如果你生活在水资源丰富的地区可能就感觉不到用水难带来的困扰，实际上，我国的人均水资源量仅为世界平均水平的1/4，是全球人均水资源最贫乏的国家之一，约400座城市以及广大农村地区因各种原因处于缺水状态。
+    </p>
+    <p class="mainPara">
+        目前，生活生产的用水量和污水排放量双双迅速增长，带来了水资源日益紧缺，环境治理难度增加等问题。污水在很多人的眼里更是污染的“罪魁祸首”、“百害而无一利”。
+        其实，只要我们利用科学规范的工艺进行污水处理，处理过后的水达到不同用途的水质标准就可以进行回用，不仅不会造成环境污染，还提高了水资源的循环利用率，缓解紧缺问题。另外，随着处理技术的革新和综合利用理念的增强，污水不仅能进行回用，而且能生产出各类能源、化肥等其他资源产品。
+    </p>
+    <p style="font-weight: 500;text-align: center">
+        这就是<span style="color: #8a8b0a">污水</span><span style="color: #4eb1ff">资源化</span>!
+    </p>
+    <p>
+        那么污水该怎么变成各种各样的资源呢？不如亲自动手来试一试。
+    </p>
+</div>
+<div></div>
+<div id="game1">
+    <div id="s_t" style="display: block">
+        <div id="game_control" style="text-align: center">
+            <p id="game_title" class="Titles">污水资源化</p>
+            <button type="reset" class="ui grey basic button">重新开始</button>
+            <button type="reset" class="ui grey basic button">隐藏说明</button>
+            <button type="reset" class="ui grey basic button">显示说明</button>
+        </div>
+        <div id="images" class="game_process">
+            <img src="images/basic/_0002_背景.png" id="背景" class="background drop ui-droppable">
+            <img src="images/basic/_0001_地面.png" id="地面" class="background drop ui-droppable" style="opacity: 0.5">
+            <img src="images/basic/_0005s_0005_管道.png" id="出水管1" class="background drop ui-droppable">
+            <img src="images/basic/_0005s_0004_污水.png" id="污水文字" class="background drop ui-droppable">
+            <img src="images/basic/_0005s_0003_进水管道.png" id="管道" class="background drop ui-droppable">
+            <img src="images/basic/_0005s_0001_初始状态接污水.png" id="初始污水容器" class="background drop ui-droppable">
+            <img src="images/basic/_0005s_0000_污水流出管道进管道.png" id="流出污水" class="background drop ui-droppable">
+            <img src="images/basic/_0004s_0005_场景栅格.png" id="step1_栅格" class="layer drop ui-droppable">
+            <img src="images/basic/_0004s_0004_污水流出管道进栅格.png" id="step1_污水流入" class="layer drop ui-droppable">
+            <img src="images/basic/_0004s_0003_小杂质.png" id="step1_污水杂质" class="background drop ui-droppable">
+            <img src="images/basic/_0004s_0002_大块石头3.png" id="step1_过滤石头3" class="layer drop ui-droppable">
+            <img src="images/basic/_0004s_0001_大块石头2.png" id="step1_过滤石头2" class="layer drop ui-droppable">
+            <img src="images/basic/_0004s_0000_大块石头.png" id="step1_过滤石头1" class="layer drop ui-droppable">
+            <img src="images/basic/_0000_step2.png" id="step2_沉沙处理" class="layer drop ui-droppable">
+            <img src="images/basic/_0003s_0001_沉淀池.png" id="step3_沉淀池" class="layer drop ui-droppable">
+            <img src="images/basic/_0003s_0000_沉淀物.png" id="step3_沉淀物" class="layer drop ui-droppable">
+            <img src="images/basic/_0002s_0002_曝气池.png" id="step4_1_曝气池" class="layer drop ui-droppable">
+            <img src="images/basic/_0002s_0003_鼓风装置.png" id="step4_1_鼓风装置" class="layer drop ui-droppable">
+            <img src="images/basic/_0002s_0000_微生物.png" id="step4_1_微生物" class="layer drop ui-droppable">
+            <img src="images/basic/_0002s_0001_气泡.png" id="step4_1_气泡" class="layer drop ui-droppable">
+            <img src="images/basic/_0001s_0003_生物膜反应池.png" id="step4_2_生物膜反应池" class="layer drop ui-droppable">
+            <img src="images/basic/_0001s_0002_生物膜反应器.png" id="step4_2_生物膜反应器" class="layer drop ui-droppable">
+            <img src="images/basic/_0001s_0001_微生物.png" id="step4_2_微生物" class="layer drop ui-droppable">
+            <img src="images/basic/_0001s_0000_气泡.png" id="step4_2_气泡" class="layer drop ui-droppable">
+            <img src="images/basic/_0000s_0000_三级处理反应池.png" id="step5_三级反应处理池" class="layer drop ui-droppable">
+            <img src="images/basic/_0000s_0001_管道-拷贝.png" id="step5_管道" class="layer drop ui-droppable">
+            <img src="images/basic/_0000s_0005_污泥处理池.png" id="step5_污泥处理池" class="layer drop ui-droppable">
+            <img src="images/basic/_0000s_0002_污泥-拷贝-2.png" id="step5_污泥1" class="layer drop ui-droppable">
+            <img src="images/basic/_0000s_0003_污泥-拷贝.png" id="step5_污泥2" class="layer drop ui-droppable">
+            <img src="images/basic/_0000s_0004_污泥.png" id="step5_污泥3" class="layer drop ui-droppable">
+            <!--顺序很重要-->
+        </div>
+        <div id="drag">
+            <div id="step1" class="appear">
+                <div class="drag_title">
+                    步骤1：预处理
+                </div>
+                <div id="step1_拖动区">
+                    <img src="images/element/栅格.png" id="step1_e栅格"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
+                    <img src="images/element/沉砂池.png" id="step1_e沉砂池" class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src ="game.js"></script>
+</body>
+</html>

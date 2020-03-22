@@ -1,0 +1,466 @@
+
+body {
+    background-color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 19px;
+    width: 100%;
+    /* background: url("img/backwhite.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%; */
+}
+
+h1 {
+    font-size: 24px;
+    color:#002d73;
+    margin: 0;
+    text-align:center;
+}
+p {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 22px 0 0 0;
+    line-height: 2;
+    text-align: justify;
+}
+
+.zhushi {
+    font-size: 14px;
+    text-align: center;
+    color:rgba(132,132,132,1.00);
+    margin-top: 0;
+}
+
+.tupian {
+    margin-top: 20px;
+}
+#ticks{
+    position:absolute;
+    left:-8px;
+    top:0px;
+    width:510px;
+}
+
+.wrapper {
+    width: 100%;
+    position: absolute;
+
+}
+#wrapperC,#wrapperZ{
+    width:100vw;
+    height: inherit;
+    position:relative;
+}
+#wrapperT{
+    position:absolute;
+    top:1%;
+}
+#wrapperM{
+    display: none;
+}
+.xiaobiaoti{
+    width: 80%;
+}
+#game, #game99{
+    height: 90vh;
+    margin-top: 0px;
+}
+
+#radarchart1,#radarchart2{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#lollipop1{
+    width:100%;
+    margin-bottom: 10px;
+}
+#lollipop2{
+    width:100%;
+    margin-bottom: 10px;
+}
+
+#slider{
+    position: absolute;
+    width: 500px;
+    height: 15px;
+    margin-top: 275px;
+    margin-left: 50px;
+}
+#legendmap{
+    width:350px;
+    margin-top: 20px;
+}
+
+@keyframes myfirst
+{
+    0%   {left:0px; top:0px;}
+    100%  {left:200px; top:0px;}
+}
+
+#huashou{
+    animation:myfirst 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
+    position:absolute;
+    right:-50px;
+    top:-25px;
+    width:100px;
+}
+.imgmapchart{
+    position:absolute;
+    margin: 10px 0 0 0;
+    width: 600px;
+}
+
+.imgbarchart{
+    position:absolute;
+    margin: 10px 0 0 0;
+    width: 600px;
+    margin-top: 325px;
+    opacity:0;
+}
+.ui.text.container {
+    padding: 1.5rem;
+    background-color: rgba(255,250,250,0.6);
+
+}
+.ui.text.container.mapChart{
+    height: 830px;
+}
+
+@keyframes myMatong
+{
+    0%,20%,100%{transform:scale(1) rotate(0);}                       /*0%,100%时保持图形的原大小且不旋转*/
+    2%,6%{transform: scale(0.9) rotate(3deg);}                  /*10%,30%时图形缩小成0.9倍，并且顺时针旋转3度*/
+    4%,8%,12%,16%{transform:scale(1.1) rotate(-3deg);}         /*20%,40%,60%,80%时图形扩大成1.1倍，并且逆时针旋转3度*/
+    10%,14%{ transform:scale(1.1) rotate(3deg);}
+}
+
+.matong {
+    animation:myMatong 15s;
+    animation-iteration-count: infinite;
+    position: absolute;
+    left:1rem;
+    bottom:1rem;
+    left:0.5rem;
+    width:5vw;
+}
+
+
+.tubiao2{
+    height:123px;
+    width:77%;
+    margin-top: 2rem;
+}
+.tubiao3{
+    height: 123px;
+    width: 35%;
+    margin-top: 2rem;
+}
+.fenge{
+    width: 50px;
+    margin: 40px 0 40px 45%;
+}
+/* duan */
+
+.wanchengjianshe{margin-top: 10px;}
+
+button {
+    background-color: #e6e6e6;
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    font-family:'黑体';
+    color: #3498db;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background: #dddddd;
+    text-decoration: none;
+    color: #000000;
+}
+
+.selected {
+    background: #dddddd;
+    text-decoration: none;
+    color: #000000;
+}
+.test-opacity{
+    opacity: 1;
+}
+.axis {
+    font: 15px sans-serif;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #D4D8DA;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+}
+#chart {
+    width: 100%;
+    padding-top: 77.77%;
+    position: relative;
+}
+
+#chart svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100%
+}
+
+.toolTip {
+    pointer-events: none;
+    position: absolute;
+    display: none;
+    min-width: 50px;
+    height: auto;
+    background: none repeat scroll 0 0 #ffffff;
+    padding: 9px 14px 6px 14px;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 1.3;
+    color: #5B6770;
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, .15);
+}
+.toolTip:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid white;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -12px;
+}
+.toolTip span {
+    font-weight: 500;
+    color: #081F2C;
+}
+
+.preloader{
+    position: absolute;
+    left: 0;
+    right:0;
+    top: 0;
+    bottom: 0;
+}
+
+.preloader #rushPee{
+    position: absolute;
+    width: 20%;
+    height: auto;
+    left: 40%;
+    top: 20%;
+}
+
+.preloader #seeking{
+    position: absolute;
+    width: 40%;
+    height: auto;
+    left: 33%;
+    top: 60%;
+}
+.ui.grid.footer{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+p.footer{
+    font-size: 9.5px;
+    margin: 12px 0 0 0;
+    line-height: 1.6;
+    text-align: justify;
+}
+.footericon{
+    position: relative;
+    width:200px;
+    margin: 0 auto -20px 10%;
+}
+@media screen and (max-width: 700px) {
+    #wrapperM{
+        display:block;
+    }
+    #wrapperZ{
+        display: none;
+    }
+    #radarchart1,#radarchart2{
+        margin-left: 0px;
+    }
+
+    .tubiao2{
+        height:73px;
+        width:77%;
+    }
+    .tubiao3{
+        height: 73px;
+        width: 35%;
+    }
+
+    /* map适配 */
+    .ui.text.container.mapChart{
+        padding:0;
+        height: 750px;
+    }
+    .imgmapchart{
+        position:absolute;
+        margin: 0 0 0 10px;
+        width: 95vw;
+    }
+    .imgbarchart{
+        position:absolute;
+        margin: 0 0 0 10px;
+        width: 95vw;
+        margin-top: 285px;
+        opacity:0;
+    }
+    #ticks{
+        width:88vw;
+    }
+    #slider{
+        position: absolute;
+        width: 87vw;
+        height:5px;
+        margin-top: 230px;
+        margin-left:1.5rem;
+    }
+    #legendmap{
+        width:300px;
+        margin-left:10px;
+    }
+    #血吸虫{
+        width: 90vw;
+        margin-left: 10px;
+    }
+    /* game适配 */
+    #game, #game99 {
+        height: 750px;
+    }
+    p#citytitle{margin-bottom: 10px;}
+    p.titles {
+        line-height: 2rem;
+        margin-bottom:10px;
+        font-family: "黑体"
+    }
+    #choosecity{
+        margin-left: 10vw;
+    }
+    #图标区1,#图标区199{
+        position: absolute;
+        top:-9px;
+    }
+    #图标区2,#图标区299{
+        position: absolute;
+        top:-10px;
+    }
+    #图标区2-2,#图标区2-299{
+        position: absolute;
+        top:-25px;
+    }
+    #图标区3,#图标区399{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    #农村图标区1, #农村图标区199{
+        position: absolute;
+        top:0;
+        margin-left:50vw;
+    }
+    #农村图标区2, #农村图标区299{
+        position: absolute;
+        top:26px;
+        left:19px;
+    }
+    .aaa{
+        margin-left: 5vw;
+        font-family:"黑体",serif;
+    }
+    #dragsuburb2, #dragsuburb299{}
+    #dragstep2,#dragstep299{margin-left: 0vw;
+        margin-bottom: -65vw;
+    }
+    #dragstep2-2,#dragstep2-299{
+        margin-bottom:-58vw;
+    }
+    #dragstep3,#dragstep399{
+
+    }
+    #step2-水池,#step2-水池99{
+        padding-top:3vw;
+    }
+    #titlexishouchi,#titlexishouchi99{
+        margin-bottom:-18vw;
+
+    }
+    .icons3{
+        /* margin:-10px 10px 10px 20px; */
+        width:93px;
+    }
+    .icons1{
+        width:130px;
+        margin:10px;
+    }
+    .icons:hover{cursor:pointer;}
+
+    #choosecity, #choosesuburb, #choosecity99, #choosesuburb99 {
+        height: auto;
+        padding-right: 30px;
+        margin: auto;
+        cursor: pointer;
+        opacity: 0.7;
+        width: 78%;
+    }
+    .chuxian {
+        position: absolute;
+        left: 1vw;
+        top:430px;
+        width: 100vw;
+    }
+    .background{
+        position:absolute;
+        z-index: -1;
+        display: block;
+        margin-left: 5vw;
+        width: 80vw;
+        height:380px;
+        margin-top: auto;
+    }
+    .tuceng{
+        display: block;
+        position: absolute;
+        z-index:1;
+        opacity:0;
+        margin-left: 5vw;
+        width: 80vw;
+        height: 380px;
+        margin-top: auto;
+    }
+    #drag,#drag99,#dragsuburb,#dragsuburb99{
+        position:relative;
+        width:30vw;}
+
+}
+#tishiyouxi{
+    margin:auto;
+    margin-top: 20px;
+}
+.reminder{
+    width: 65vw;
+    height: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 5vw;
+}
+

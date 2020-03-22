@@ -1,0 +1,73 @@
+@charset "UTF-8";
+.ui-draggable-dragging {
+    z-index: 10000 !important;
+}
+
+.ui-draggable {
+    z-index: 10;
+}
+.Titles
+{
+    font-size: 35px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    font-family: '黑体', serif;
+}
+.background {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    margin-left: 15vw;
+    width: 70vw;
+    height: 700px;
+    margin-top: auto;
+}
+.layer {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    margin-left: 15vw;
+    width: 70vw;
+    height: 700px;
+    margin-top: auto;
+    opacity: 0;
+}
+#drag{
+    position: relative;
+    width: 30vw;
+}
+.appear
+{
+    position: absolute;
+    left: 1vw;
+    top: 650px;
+    width: 100vw;
+}
+.drag_title
+{
+    line-height: 25px;
+    font-family: "黑体", serif;
+    margin-left: 10vw;
+    line-height: 25px;
+}
+#step1_拖动区
+{
+    position: absolute;
+
+}
+.element
+{
+    float: left;
+    cursor: pointer;
+}
+.step_1_element
+{
+    width: 200px;
+    margin: 20px;
+    left: 100px;
+}
+#game_control
+{
+    text-align: center;
+}
