@@ -31,7 +31,7 @@
         }
         #game1
         {
-            height: 750px;
+            height: 90vh;
         }
         .ui.text.container
         {
@@ -42,7 +42,16 @@
         {
             text-indent: 2em;
         }
+        .step_ip       /*解释类*/
+        {
+            margin-top: 700px;
+        }
+
         @media screen and (max-width: 700px) {
+            #game1
+            {
+                height: 750px;
+            }
             .background{
                 position:absolute;
                 z-index: -1;
@@ -75,6 +84,16 @@
                 top: 450px;
                 width: 100vw;
             }
+            .step_1_element
+            {
+                width: 150px;
+                margin: 15px;
+                left: 100px;
+            }
+            .step_ip       /*解释类*/
+            {
+                margin-top: 500px;
+            }
         }
     </style>
     <title>Title</title>
@@ -98,7 +117,6 @@
         那么污水该怎么变成各种各样的资源呢？不如亲自动手来试一试。
     </p>
 </div>
-<div></div>
 <div id="game1">
     <div id="s_t" style="display: block">
         <div id="game_control" style="text-align: center">
@@ -109,7 +127,7 @@
         </div>
         <div id="images" class="game_process">
             <img src="images/basic/_0002_背景.png" id="背景" class="background drop ui-droppable">
-            <img src="images/basic/_0001_地面.png" id="地面" class="background drop ui-droppable" style="opacity: 0.5">
+            <img src="images/basic/_0001_地面.png" id="地面" class="background drop ui-droppable">
             <img src="images/basic/_0005s_0005_管道.png" id="出水管1" class="background drop ui-droppable">
             <img src="images/basic/_0005s_0004_污水.png" id="污水文字" class="background drop ui-droppable">
             <img src="images/basic/_0005s_0003_进水管道.png" id="管道" class="background drop ui-droppable">
@@ -149,6 +167,21 @@
                     <img src="images/element/栅格.png" id="step1_e栅格"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
                     <img src="images/element/沉砂池.png" id="step1_e沉砂池" class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative">
                 </div>
+                <div id="dragstep1_button" style="text-align: center; margin-top: 200px">
+                    <button class= "ui grey basic button">确定</button>
+                </div>
+
+            </div>
+        </div>
+        <div id="步骤解释" class="step_ip">
+            <div id="step1_interpret" class="ui text container ui raised segment" style="display: none">
+                <h3>预处理工艺通常包括格栅处理和沉砂处理</h3>
+                <p>
+                    格栅处理的目的是截流大块物质以保护后续水泵管线、设备的正常运行。
+                </p>
+                <p>
+                    沉砂处理的目的是沉降污水中裹携的砂、石与大块颗粒物，防止造成设施淤砂，造成磨损堵塞，影响管线设备的正常运行.
+                </p>
             </div>
         </div>
 
