@@ -90,9 +90,19 @@
                 margin: 15px;
                 left: 25px;
             }
+            .step3-1_element
+            {
+                width: 100px;
+                margin: 15px;
+                left: 10px;
+            }
             .step_ip       /*解释类*/
             {
                 margin-top: 500px;
+            }
+            #dragstep3-1_button
+            {
+                margin-top: 200px;
             }
         }
     </style>
@@ -121,9 +131,9 @@
     <div id="s_t" style="display: block">
         <div id="game_control" style="text-align: center">
             <p id="game_title" class="Titles">污水资源化</p>
-            <button type="reset" class="ui grey basic button">重新开始</button>
-            <button type="reset" class="ui grey basic button">隐藏说明</button>
-            <button type="reset" class="ui grey basic button">显示说明</button>
+            <button type="reset" class="ui large grey basic button">重新开始</button>
+            <button type="reset" class="ui large grey basic button">隐藏说明</button>
+            <button type="reset" class="ui large grey basic button">显示说明</button>
         </div>
         <div id="images" class="game_process">
             <img src="images/basic/_0002_背景.png" id="背景" class="background drop ui-droppable">
@@ -142,8 +152,8 @@
             <img src="images/basic/_0000_step2.png" id="step2_沉沙处理" class="layer drop ui-droppable">
             <img src="images/basic/_0003s_0001_沉淀池.png" id="step3_沉淀池" class="layer drop ui-droppable">
             <img src="images/basic/_0003s_0000_沉淀物.png" id="step3_沉淀物" class="layer drop ui-droppable">
-            <img src="images/basic/_0002s_0002_曝气池.png" id="step4_1_曝气池" class="layer drop ui-droppable">
             <img src="images/basic/_0002s_0003_鼓风装置.png" id="step4_1_鼓风装置" class="layer drop ui-droppable">
+            <img src="images/basic/_0002s_0002_曝气池.png" id="step4_1_曝气池" class="layer drop ui-droppable">
             <img src="images/basic/_0002s_0000_微生物.png" id="step4_1_微生物" class="layer drop ui-droppable">
             <img src="images/basic/_0002s_0001_气泡.png" id="step4_1_气泡" class="layer drop ui-droppable">
             <img src="images/basic/_0001s_0003_生物膜反应池.png" id="step4_2_生物膜反应池" class="layer drop ui-droppable">
@@ -163,8 +173,8 @@
                 <div class="drag_title">
                     步骤1：预处理
                 </div>
-                <div id="step1_拖动区">
-                    <img src="images/element/栅格.png" id="step1_e栅格"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="格栅">
+                <div id="step1_拖动区" style="width: 100vw;">
+                    <img src="images/element/栅格.png" id="step1_e栅格"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="栅格">
                     <img src="images/element/沉砂池.png" id="step1_e沉砂池" class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative" title="沉砂池">
                 </div>
                 <div id="dragstep1_button" style="text-align: center; margin-top: 200px">
@@ -189,18 +199,43 @@
                     排放：
                 </div>
             </div>
-            <div id="step3" class="appear" style="display: none">
+
+            <div id="step3_二选一" class="appear" style="display: none">
+                <div class="drag_title">
+                    步骤3:二级处理：活性污泥处理法或生物膜法。
+                </div>
+            </div>
+
+            <div id="step3_1" class="appear" style="display: none">
                 <div class="drag_title">
                     步骤3:二级处理-活性污泥处理法
                 </div>
                 <div id="step3-1_拖动区" >
-                    <img src="images/element/曝气池.png" id="step3-1_曝气池"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
+                    <img src="images/element/曝气池.png" id="step3-1_e曝气池"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
+                    <img src="images/element/鼓风装置.png" id="step3-1_e鼓风装置"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
+                    <img src="images/element/微生物.png" id="step3-1_e微生物"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
                 </div>
-                <div id="dragstep3-1_button" style="text-align: center; margin-top: 200px">
+                <div id="dragstep3-1_button" style="text-align: center; ">
+                    <button class= "ui grey basic button">确定</button>
+                </div>
+            </div>
+
+            <div id="step3_2" class="appear" style="display: none">
+                <div class="drag_title">
+                    步骤3:二级处理-生物膜法
+                </div>
+                <div id="step3-2_拖动区" >
+                    <img src="images/element/生物膜反应池.png" id="step3-2_e生物膜反应池"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
+                    <img src="images/element/生物膜.png" id="step3-2_e生物膜"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
+                    <img src="images/element/微生物.png" id="step3-2_e微生物"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
+                </div>
+                <div id="dragstep3-2_button" style="text-align: center; margin-top: 225px">
                     <button class= "ui grey basic button">确定</button>
                 </div>
             </div>
         </div>
+
+        <!--解释层-->
         <div id="步骤解释" class="step_ip">
             <div id="step1_interpret" class="ui text container ui raised segment" style="display: none">
                 <h3>预处理工艺通常包括格栅处理和沉砂处理</h3>
@@ -219,8 +254,11 @@
                     一级处理工艺主要是初级沉淀池，目的是将污水中悬浮物尽可能地沉降去除，一般初次沉淀池可去除城市污水中约 25% 的 BOD5（五日生化需氧量）以及近 50% 的 SS（悬浮物）。
                 </p>
                 <div id="step2_解释确定" style="text-align: center; margin-top: 15px">
-                    <button class= "ui grey basic button" id="step2_二级处理确定">进行二级处理</button>
-                    <button class= "ui grey basic button" id="step2_排放确定">排放</button>
+                    <div class="ui large buttons">
+                        <button class= "ui grey basic button" id="step2_二级处理确定">进行二级处理</button>
+                        <div class="or"></div>
+                        <button class= "ui grey basic button" id="step2_排放确定">排放</button>
+                    </div>
                 </div>
             </div>
             <div id="排放1" class="ui text container ui raised segment" style="display: none">
@@ -228,7 +266,61 @@
                     很遗憾，污水处理未达到排放标准！污水中仍然存在胶状有机物、氧化物、硫化物等有毒物质，请进行二级处理。
                 </p>
                 <div id="排放1_确定" style="text-align: center; margin-top: 15px">
-                    <button class= "ui grey basic button">进行二级处理</button>
+                    <button class= "ui grey basic button" id="排放1_二级处理确定">进行二级处理</button>
+                </div>
+            </div>
+            <div id="二级处理选择" class="ui text container ui raised segment" style="display: none">
+                <p>
+                    城市污水二级处理多采用生物处理技术，主要目的是去除水中不可沉悬浮物或生物可分解特性的有机物。
+                    生物处理技术大致可分为两种：活性污泥处理法和生物膜法。
+                </p>
+                <div id="step3_选择" style="text-align: center; margin-top: 15px">
+                    <div class="ui large buttons">
+                        <button class="ui grey basic button" id="选择step3_1活性污泥处理法">活性污泥处理法</button>
+                        <div class="or"></div>
+                        <button class="ui grey basic button" id="选择step3_2生物膜法">生物膜法</button>
+                    </div>
+                    <!--<button class= "ui grey basic button" id="排放1_二级处理确定">进行二级处理</button>-->
+                </div>
+            </div>
+            <div id="step3-1_活性污泥处理法" class="ui text container ui raised segment" style="display: none">
+                <p>
+                    活性污泥处理法的原理：在人工充氧非常充足的条件下，将污水和一些微生物一起培养，形成活性污泥，然后利用污泥中生物的凝聚、氧化等作用除去有机污染物。
+                </p>
+                <p>
+                    曝气池的目的是通过曝气溶解空气中更多的氧气，促使污水中的有机污染物被微生物氧化分解而降解。
+                </p>
+                <div id="step3-1_选择" style="text-align: center; margin-top: 15px">
+                    <div class="ui large buttons">
+                        <button class="ui grey basic button" id="3-1_三级处理">继续进行三级处理！</button>
+                        <div class="or"></div>
+                        <button class="ui grey basic button" id="3-1_排放">排放</button>
+                    </div>
+                    <!--<button class= "ui grey basic button" id="排放1_二级处理确定">进行二级处理</button>-->
+                </div>
+            </div>
+            <div id="step3-2_生物膜法" class="ui text container ui raised segment" style="display: none">
+                <p>
+                    生物膜法的原理：在池内设置微生物生长聚集的载体（一般称填料），在充氧的条件下，微生物在填料表面聚附着形成生物膜，吸附流动的污水层的浓度较高的有机物，由外层的好氧层的好氧菌将其分解，里层是厌氧菌层，流动着的污水又会不断洗刷厌氧层过厚老化的生物膜，使生物膜生长出新的生物膜，如此反复达到固液分离、净化污水的目的。
+                </p>
+                <p>
+                    生物膜反应池的作用是通过微生物的氨化、硝化和反硝化作用，将污水中的氮转化成氨气释放到空气中。
+                </p>
+                <div id="step3-2_选择" style="text-align: center; margin-top: 15px">
+                    <div class="ui large buttons">
+                        <button class="ui grey basic button" id="3-2_三级处理">继续进行三级处理！</button>
+                        <div class="or"></div>
+                        <button class="ui grey basic button" id="3-2_排放">排放</button>
+                    </div>
+                    <!--<button class= "ui grey basic button" id="排放1_二级处理确定">进行二级处理</button>-->
+                </div>
+            </div>
+            <div id="排放2" class="ui text container ui raised segment" style="display: none">
+                <p style="text-align: center">
+                    恭喜，已经达到排放标准！但是目前一般还不能直接作为回用水，若想达到回用标准，请进行三级处理!
+                </p>
+                <div id="排放2_确定" style="text-align: center; margin-top: 15px">
+                    <button class= "ui large grey basic button" id="排放2_三级处理确定">进行三级处理!</button>
                 </div>
             </div>
         </div>
