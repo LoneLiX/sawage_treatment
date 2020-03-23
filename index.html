@@ -23,7 +23,7 @@
         }
         p{
             font-size: 18px;
-            font-weight: 300;
+            /*font-weight: 300;*/
             margin:22px 0 0 0;
             line-height: 2;
             text-align: justify;
@@ -31,6 +31,9 @@
         }
         #game1 {
             height: 90vh;
+        }
+        #game2 {
+            height: 70vh;
         }
         .ui.text.container {
            padding:1.5em;
@@ -50,9 +53,40 @@
         {
             display: none;
         }
+        .game2_button
+        {
+            margin-top:310px;
+        }
+        #污泥处理1_interpret
+        {
+            margin-top: 600px;
+        }
+        #污泥处理2_interpret
+        {
+            margin-top: 550px;
+        }
+        #污泥处理3_interpret
+        {
+            margin-top: 550px;
+        }
+        .ui.grid.footer{
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p.footer{
+            font-size: 9.5px;
+            margin: 12px 0 0 0;
+            line-height: 1.6;
+            text-align: justify;
+        }
 
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 750px) {
             #game1 {
+                height: 750px;
+            }
+            #game2
+            {
                 height: 750px;
             }
             .background{
@@ -84,6 +118,12 @@
                 top: 450px;
                 width: 100vw;
             }
+            .appear2{
+                position: relative;
+                left: 1vw;
+                top: 450px;
+                width: 100vw;
+            }
             .step_1_element {
                 width: 150px;
                 margin: 15px;
@@ -97,8 +137,16 @@
             .step_ip       /*解释类*/{
                 margin-top: 500px;
             }
+            #dragstep1_button
+            {
+                margin-top:260px;
+            }
             #dragstep3-1_button {
                 margin-top: 200px;
+            }
+            .game2_button
+            {
+                margin-top:280px;
             }
             #解释汇总 {
                 margin-top: 50px;
@@ -106,6 +154,18 @@
             .interpret_para
             {
                 display: none;
+            }
+            #污泥处理1_interpret
+            {
+                margin-top: 400px;
+            }
+            #污泥处理2_interpret
+            {
+                margin-top: 320px;
+            }
+            #污泥处理3_interpret
+            {
+                margin-top: 320px;
             }
 
         }
@@ -124,7 +184,7 @@
         目前，生活生产的用水量和污水排放量双双迅速增长，带来了水资源日益紧缺，环境治理难度增加等问题。污水在很多人的眼里更是污染的“罪魁祸首”、“百害而无一利”。
         其实，只要我们利用科学规范的工艺进行污水处理，处理过后的水达到不同用途的水质标准就可以进行回用，不仅不会造成环境污染，还提高了水资源的循环利用率，缓解紧缺问题。另外，随着处理技术的革新和综合利用理念的增强，污水不仅能进行回用，而且能生产出各类能源、化肥等其他资源产品。
     </p>
-    <p style="font-weight: 500;text-align: center">
+    <p style="font-weight: bold;text-align: center; font-size:25px;">
         这就是<span style="color: #8a8b0a">污水</span><span style="color: #4eb1ff">资源化</span>!
     </p>
     <p>
@@ -225,10 +285,10 @@
                 </div>
                 <div id="step1_拖动区" style="width: 100vw;">
                     <img src="images/element/栅格.png" id="step1_e栅格"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="栅格">
-                    <img src="images/element/沉砂池.png" id="step1_e沉砂池" class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative" title="沉砂池">
+                    <img src="images/element/沉砂池.png" id="step1_e沉砂池" class="element step_1_element ui-draggable ui-draggable-handle" style=" margin-top:30px;position: relative;" title="沉砂池">
                 </div>
-                <div id="dragstep1_button" style="text-align: center; margin-top: 200px">
-                    <button class= "ui grey basic button">确定</button>
+                <div id="dragstep1_button" style="text-align: center;">
+                    <button class= "ui large grey basic button">确定</button>
                 </div>
             </div>
 
@@ -236,11 +296,11 @@
                 <div class="drag_title">
                     步骤2：一级处理
                 </div>
-                <div id="step2_拖动区" >
+                <div id="step2_拖动区" style="width:100vw;">
                     <img src="images/element/沉淀池.png" id="step2_e沉淀池"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="沉淀池">
                 </div>
-                <div id="dragstep2_button" style="text-align: center; margin-top: 200px">
-                    <button class= "ui grey basic button">确定</button>
+                <div id="dragstep2_button" style="text-align: center; margin-top: 325px">
+                    <button class= "ui large grey basic button">确定</button>
                 </div>
             </div>
 
@@ -251,9 +311,7 @@
             </div>
 
             <div id="step3_二选一" class="appear" style="display: none">
-                <div class="drag_title">
-                    步骤3:二级处理：活性污泥处理法或生物膜法。
-                </div>
+                <div class="drag_title">步骤3：二级处理</div>
             </div>
 
             <div id="step3_1" class="appear" style="display: none">
@@ -266,7 +324,7 @@
                     <img src="images/element/微生物.png" id="step3-1_e微生物"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="微生物">
                 </div>
                 <div id="dragstep3-1_button" style="text-align: center; ">
-                    <button class= "ui grey basic button">确定</button>
+                    <button class= "ui large grey basic button">确定</button>
                 </div>
             </div>
 
@@ -279,8 +337,8 @@
                     <img src="images/element/生物膜.png" id="step3-2_e生物膜"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="生物膜反应器">
                     <img src="images/element/微生物.png" id="step3-2_e微生物"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="微生物">
                 </div>
-                <div id="dragstep3-2_button" style="text-align: center; margin-top: 225px">
-                    <button class= "ui grey basic button">确定</button>
+                <div id="dragstep3-2_button" style="text-align: center; margin-top: 250px">
+                    <button class= "ui large grey basic button">确定</button>
                 </div>
             </div>
             <div id="step4" class="appear" style="display: none">
@@ -294,7 +352,7 @@
                     <img src="images/element/氯气.png" id="step4_e氯气"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="这是氯气，氯气和臭氧二选一就可以哦">
                 </div>
                 <div id="dragstep4_button" style="text-align: center; margin-top: 250px">
-                    <button class= "ui grey basic button">确定</button>
+                    <button class= "ui large grey basic button">确定</button>
                 </div>
             </div>
         </div>
@@ -436,29 +494,203 @@
                                 生物膜反应池的作用是通过微生物的氨化、硝化和反硝化作用，将污水中的氮转化成氨气释放到空气中。
                             </p>
                         </div>
-                        <div id="解释汇总2_三级处理" class="interpret_para">
-                            <h3 style="margin-top: 22px">三级处理：</h3>
-                            <p>活性炭和絮凝剂：除去水中的氮磷</p>
-                            <p>臭氧或氯气：消毒</p>
-                            <abbr></abbr>
-                            <p>经过三级处理后的水便可作为送至中间水道冲厕、喷洒街道、绿化带、工业用水、消防等水源。</p>
-                            <p style="font-weight: bold">经过三级处理的水就可以进行污水回用了：</p>
-                            <p>（1）补充水源：用于补充地表水和地下水。补充河流、湖泊以及补给、防止海水入侵等。</p>
-                            <p>（2）景观环境用水：用于观赏性景观环境用水，娱乐性景观环境用水，湿地环境用水。</p>
-                            <p>（3）工业用水：用于洗涤用水，锅炉用水以及工艺用水。</p>
-                            <p>（4）城镇杂用水：用于冲厕、街道清扫，各种车辆冲洗，建筑施工、混凝土养护与制备，消防用水等。</p>
-                            <p>（5）农林牧副业用水：用于农田灌溉，造林育苗，淡水养殖，园林绿化等。</p>
+                    </div>
+                    <div id="解释汇总2_三级处理" class="interpret_para">
+                        <h3 style="margin-top: 22px">三级处理：</h3>
+                        <p>活性炭和絮凝剂：除去水中的氮磷</p>
+                        <p>臭氧或氯气：消毒</p>
+                        <abbr></abbr>
+                        <p>经过三级处理后的水便可作为送至中间水道冲厕、喷洒街道、绿化带、工业用水、消防等水源。</p>
+                        <p style="font-weight: bold;text-align: center">经过三级处理的水就可以进行污水回用了</p>
+                        <p>（1）补充水源：用于补充地表水和地下水。补充河流、湖泊以及补给、防止海水入侵等。</p>
+                        <p>（2）景观环境用水：用于观赏性景观环境用水，娱乐性景观环境用水，湿地环境用水。</p>
+                        <p>（3）工业用水：用于洗涤用水，锅炉用水以及工艺用水。</p>
+                        <p>（4）城镇杂用水：用于冲厕、街道清扫，各种车辆冲洗，建筑施工、混凝土养护与制备，消防用水等。</p>
+                        <p>（5）农林牧副业用水：用于农田灌溉，造林育苗，淡水养殖，园林绿化等。</p>
+                    </div>
+                    <div style="text-align: center">
+                    <div id="game1_last_button" class="ui large blue animated button" tabindex="0" style="margin-top: 25px">
+                        <div class="visible content">下一步</div>
+                        <div class="hidden content">
+                            污泥处理
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui text container" id="污泥处理介绍" style="margin-top: 50px;display: none" >
+            <h2 style="text-align: center">你以为就这样结束了吗？</h2>
+            <h3>这仅仅是完成了污水净化排放和回用。别忘了，我们还有那么多污泥没有处理呢！</h3>
+            <p class="mainPara">由于污泥可能含有有毒有害物质，污泥处理不当将会造成生态环境的二次污染。
+                除了简单的填埋沤肥方法，可以利用多种污泥处理技术生成多种资源产品。
+            </p>
+            <h3 style="text-align: center">试一试</h3>
+            <div style="text-align: center; margin-top:25px">
+                <div class="ui large buttons" id="污泥处理选择" style="opacity: 0.8">
+                    <button class="ui yellow button" id="污泥_甲烷确定">先试试污泥->甲烷</button>
+                </div>
+            </div>
+        </div>
+        <div id="game2" style="display: none">
+            <div id="Sludge_treatment" style="display: block">
+                <div id="game2_control" style="text-align: center">
+                    <p id="game2_title" class="Titles">污泥资源化</p>
+                    <button type="reset" class="ui large grey basic button" id="game2_显示说明">显示说明</button>
+                    <button type="reset" class="ui large grey basic button" id="game2_隐藏说明">隐藏说明</button>
+                </div>
+                <div id="污泥处理说明" class="ui text container ui raised segment" style="display: none">
+                    <div id="污泥变甲烷" style="display: none">
+                        <h3 style="margin-top: 22px">污泥转化为甲烷：</h3>
+                        <p><strong>原理：</strong>通过对初沉池污泥和二沉池剩余活性污泥进行厌氧消化（指有机质在无氧条件下，由兼性菌和厌氧细菌将可生物降解的有机物分解为CH4、CO2等），将污泥中的有机物质转化为甲烷。</p>
+                    </div>
+                    <div id="污泥变热能" style="display: none">
+                        <h3 style="margin-top: 22px">污泥转化为热能：</h3>
+                        <p><strong>原理：</strong>污泥在低温环境当中，会产生热分解反应，利用这一特性与污水处理技术融合应用，就能够将污泥转化为热能。</p>
+                    </div>
+                    <div id="污泥变化肥" style="display: none">
+                        <h3 style="margin-top: 22px">污泥转化为化肥：</h3>
+                        <p><strong>原理：</strong>污泥脱水干化(甩出水滴)，提供一个发酵装置，加入污泥，进行消毒杀菌，发酵一段时间，污泥熟化后添加粉煤灰，即可产生化肥。</p>
+                    </div>
+                </div>
+                <div id="污泥处理图片" class="game2_images">
+                    <img src="images/basic2/未标题-1_0009_污泥处理池.png" id="污泥处理池" class="layer drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0000_污泥-拷贝-2.png" id="污泥1" class="layer drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0001_污泥-拷贝.png" id="污泥2" class="layer drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0002_污泥.png" id="污泥3" class="layer drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0003_化肥.png" id="化肥" class="layer drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0004_甲烷.png" id="甲烷" class="layer drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0005_无氧加热器.png" id="无氧加热器" class="layer drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0006_热能.png" id="热能" class="layer drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0008_发酵装置.png" id="发酵装置" class="layer drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0007_点击1.png" id="污泥点击提示" class="layer drop ui-droppable animated infinite bounce">
+                </div>
+                <div id="drag2">
+                    <div id="污泥处理1" class="appear2" style="display: none" >
+                        <div class="drag_title">
+                            污泥->甲烷
+                        </div>
+                        <div id="污泥处理1_拖动区" style="width: 100vw;">
+                            <img src="images/element/污泥.png" id="污泥处理1_e污泥"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="污泥">
+                            <img src="images/element/兼性菌.png" id="污泥处理1_e兼性菌"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="兼性菌">
+                            <img src="images/element/厌氧细菌.png" id="污泥处理1_e厌氧细菌"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="厌氧细菌">
+                        </div>
+                        <div id="污泥处理1_button" class="game2_button"style="text-align: center;">
+                            <button class= "ui large yellow button">反应！</button>
+                        </div>
+                    </div>
+                    <div id="污泥处理2" class="appear2" style="display: none">
+                        <div class="drag_title">
+                            污泥->热能
+                        </div>
+                        <div id="污泥处理2_拖动区" style="width: 100vw;">
+                            <img src="images/element/污泥.png" id="污泥处理2_e污泥"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="污泥">
+                        </div>
+                        <div id="污泥处理2_button" class="game2_button"style="text-align: center;">
+                            <button class= "ui large red button">加热！</button>
+                        </div>
+                    </div>
+                    <div id="污泥处理3" class="appear2" style="display: none">
+                        <div class="drag_title">
+                            污泥->化肥
+                        </div>
+                        <div id="污泥处理3_拖动区" style="width: 100vw;">
+                            <img src="images/element/污泥.png" id="污泥处理3_e污泥"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="污泥">
+                            <img src="images/element/粉煤灰.png" id="污泥处理3_e粉煤灰"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="粉煤灰">
+                        </div>
+                        <div id="污泥处理3_button" class="game2_button"style="text-align: center;">
+                            <button class= "ui large brown button">继续</button>
                         </div>
                     </div>
                 </div>
-                
+                <div id="污泥处理步骤解释">
+                    <div id="污泥处理1_interpret" class="ui text container ui raised segment" style="display: none">
+                        <h3 style="margin-top: 22px">污泥转化为甲烷：</h3>
+                        <p><strong>原理：</strong>通过对初沉池污泥和二沉池剩余活性污泥进行厌氧消化（指有机质在无氧条件下，由兼性菌和厌氧细菌将可生物降解的有机物分解为CH4、CO2等），将污泥中的有机物质转化为甲烷。</p>
+                        <div style="text-align: center; margin-top:25px">
+                            <div class="ui large buttons" style="opacity: 0.8">
+                                <button id="试试污泥热能" class="ui red button">试试污泥->热能</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="污泥处理2_interpret" class="ui text container ui raised segment" style="display: none">
+                        <h3 style="margin-top: 22px">污泥转化为热能：</h3>
+                        <p><strong>原理：</strong>污泥在低温环境当中，会产生热分解反应，利用这一特性与污水处理技术融合应用，就能够将污泥转化为热能。</p>
+                        <div style="text-align: center; margin-top:25px">
+                            <div class="ui large buttons" style="opacity: 0.8">
+                                <button id="试试污泥化肥" class="ui brown button">试试污泥->化肥</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="污泥处理3_interpret" class="ui text container ui raised segment" style="display: none">
+                        <h3 style="margin-top: 22px">污泥转化为化肥：</h3>
+                        <p><strong>原理：</strong>污泥脱水干化(甩出水滴)，提供一个发酵装置，加入污泥，进行消毒杀菌，发酵一段时间，污泥熟化后添加粉煤灰，即可产生化肥。</p>
+                        <div style="text-align: center; margin-top:25px">
+                            <div class="ui large buttons" style="opacity: 0.8">
+                                <button  id="game2_last_button"class="ui blue button">继续！</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="污泥处理回顾" class="ui text container ui raised segment" style="display: none">
+                        <h2>让我们回顾一下污泥处理的过程吧</h2>
+                        <h3 style="margin-top: 22px">污泥转化为甲烷：</h3>
+                        <p><strong>原理：</strong>通过对初沉池污泥和二沉池剩余活性污泥进行厌氧消化（指有机质在无氧条件下，由兼性菌和厌氧细菌将可生物降解的有机物分解为CH4、CO2等），将污泥中的有机物质转化为甲烷。</p>
+                        <h3 style="margin-top: 22px">污泥转化为热能：</h3>
+                        <p><strong>原理：</strong>污泥在低温环境当中，会产生热分解反应，利用这一特性与污水处理技术融合应用，就能够将污泥转化为热能。</p>
+                        <h3 style="margin-top: 22px">污泥转化为化肥：</h3>
+                        <p><strong>原理：</strong>污泥脱水干化(甩出水滴)，提供一个发酵装置，加入污泥，进行消毒杀菌，发酵一段时间，污泥熟化后添加粉煤灰，即可产生化肥。</p>
+                        <div style="text-align: center">
+                            <div id="大功告成" class="ui large blue animated button" tabindex="0" style="margin-top: 25px">
+                                <div class="visible content">下一步</div>
+                                <div class="hidden content">
+                                    大功告成！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="结尾过渡" class="ui text container ui raised segment" style="margin-top:45px; display: none">
+                        <p style="text-align: center"><strong> 恭喜你成功将污水转变为多种资源，想必你对污水的误解已在慢慢消解了吧！</strong></p>
+                    </div>
+                    <div id="结尾" class="ui text container" style="margin-top: 50px; display: none">
+                        <p class="mainPara">由于人口增长、城镇化发展和社会经济状况改善，人们对水的需求和使用量不断增加。而与此同时，气候变化、对地下水随意抽取和污染等导致水资源可利用量逐渐减少。污水资源化不仅能够满足人类和环境的需求，提高淡水可利用量；污水更是一种有价值的资源，如果得到妥善管理，可以创造巨大的机会和收益。</p>
+                        <p class="mainPara">而目前污水资源化的困境，不仅在于废水处理系统建设所需的技术与资金短缺，市场化程度低，同时也在于污水资源化利用这一概念在民众与公共部门中的社会认可度是否充分。归根到底，对于污水回收再利用，大众主要担心处理后的污水是否合格，是否影响人体健康。所以，污水资源化的未来不仅在于污水处理厂这一废水管理过程中的“资源工厂”，实现废水的净化、排放、再利用与资源回收；同时也需要填补法律法规和制度框架在污水资源化区域的空白，通过广泛的宣传和公众参与以建立人们对污水资源化系统的信任，从而消除公众疑虑并促使其支持污水的资源化利用。</p>
+
+                        <p class="mainPara"><strong>未来世界对淡水的需求不断增加。然而，水资源是有限的，过度开采、污染、气候变化还会带来巨大挑战。当社会大力提倡循环经济时，废水作为隐藏资源，污水资源化所带来的巨大机遇不容忽视。</strong></p>
+                    </div>
+                    <div id="footer" style="margin-top: 50px; display: none">
+                        <div class="ui secondary vertical segment">
+                            <div class="ui stackable grid footer">
+                                <div class="eight wide column" id="参考资料">
+                                    <p class="footer">
+                                        <strong>参考资料：</strong>
+                                    </p>
+                                    <p class="footer">
+                                        <b>文案：</b>
+                                    </p>
+                                </div>
+                                <div class="two wide column"></div>
+                                <div class="six wide column">
+                                    <p class="footer">
+                                        <b>图片：</b>
+                                    </p>
+                                    <p class="footer">
+                                        <b>前端：</b>
+                                    </p>
+                                </div>
+
+
+                            </div>
+                            <div class="ui inverted section divider "></div>
+                            <p class=footer style="text-align: center">Copyright &copy; 2020 污水资！源！化！group</p>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
-
     </div>
-
 </div>
+
 
 <script src ="game.js"></script>
 </body>

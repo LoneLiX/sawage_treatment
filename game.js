@@ -96,6 +96,30 @@ $(function () {
                     $("#step4_e氯气").fadeOut(500);
                     $("#step4_e臭氧").hide();
                 }
+                else if(elements==="污泥处理1_e污泥"){
+                    $("#污泥1").animate({opacity:1});
+                    $("#污泥2").animate({opacity:1});
+                    $("#污泥3").animate({opacity:1});
+                    $("#污泥点击提示").hide();
+                    $("#污泥处理1_e污泥").fadeOut(500);
+                }
+                else if(elements==="污泥处理1_e兼性菌"){
+                    $("#污泥处理1_e兼性菌").fadeOut(500);
+                }
+                else if(elements==="污泥处理1_e厌氧细菌"){
+                    $("#污泥处理1_e厌氧细菌").fadeOut(500);
+                }
+                else if(elements==="污泥处理2_e污泥") {
+                    $("#污泥处理2_e污泥").fadeOut(500);
+                    $("#污泥点击提示").hide();
+                }
+                else if(elements==="污泥处理3_e污泥") {
+                    $("#污泥处理3_e污泥").fadeOut(500);
+                    $("#污泥点击提示").hide();
+                }
+                else if(elements==="污泥处理3_e粉煤灰") {
+                    $("#污泥处理3_e粉煤灰").fadeOut(500);
+                }
                 }
 
         });
@@ -238,6 +262,80 @@ $(function () {
         $("#game1_显示说明").remove();
         $("#game1_隐藏说明").remove();
     });
+    /*游戏2*/
+    $("#game1_last_button").click(function () {
+        $("#game1_last_button").hide();
+        $("#污泥处理介绍").fadeIn(2000);
+    });
+    $("#污泥_甲烷确定").click(function () {
+        $("#污泥处理选择").hide();
+        $("#game2").show();
+        $("#污泥处理池").animate({opacity:1});
+        $("#污泥点击提示").animate({opacity:0.5});
+        $("#污泥处理1").fadeIn(1000);
+    });
+    $("#污泥处理1_button").click(function () {
+        var wncl1_nxt=$("#污泥处理1_e污泥").css("display")+$("#污泥处理1_e兼性菌").css("display")+$("#污泥处理1_e厌氧细菌").css("display");
+        if(wncl1_nxt=="nonenonenone") {
+            $("#污泥处理池").hide();
+            $("#污泥1").hide();
+            $("#污泥2").hide();
+            $("#污泥3").hide();
+            $("#甲烷").animate({opacity:1});
+            $("#污泥处理1_interpret").fadeIn(2000);
+            $("#污泥处理1").hide();
+        }
+    });
+    $("#试试污泥热能").click(function () {
+        $("#甲烷").hide();
+        $("#污泥变甲烷").show();
+        $("#无氧加热器").animate({opacity:1});
+        $("#污泥点击提示").show();
+        $("#污泥处理1_interpret").hide();
+        $("#污泥处理2").fadeIn(1000);
+    });
+    $("#污泥处理2_button").click(function () {
+        var wncl2_nxt=$("#污泥处理2_e污泥").css("display")
+        if(wncl2_nxt=="none") {
+            $("#无氧加热器").hide();
+            $("#热能").animate({opacity:1});
+            $("#污泥处理2_interpret").fadeIn(2000);
+            $("#污泥处理2").hide();
+        }
+    });
+    $("#试试污泥化肥").click(function () {
+        $("#热能").hide();
+        $("#污泥变热能").show();
+        $("#发酵装置").animate({opacity:1});
+        $("#污泥点击提示").show();
+        $("#污泥处理2_interpret").hide();
+        $("#污泥处理3").fadeIn(1000);
+    });
+    $("#污泥处理3_button").click(function () {
+        var wncl3_nxt=$("#污泥处理3_e污泥").css("display")+$("#污泥处理3_e粉煤灰").css("display")
+        if(wncl3_nxt=="nonenone")
+        {
+            $("#发酵装置").hide();
+            $("#化肥").animate({opacity:1});
+            $("#污泥处理3_interpret").fadeIn(2000);
+            $("#污泥处理3").hide();
+        }
+
+    });
+    $("#game2_last_button").click(function () {
+        $("#化肥").fadeOut(500);
+        $("#污泥处理说明").hide()
+        $("#game2_显示说明").hide()
+        $("#game2_隐藏说明").hide()
+        $("#污泥处理3_interpret").fadeOut(500);
+        $("#污泥处理回顾").fadeIn(2000);
+    });
+    $("#大功告成").click(function () {
+        $("#大功告成").hide();
+        $("#结尾过渡").fadeIn(1000);
+        $("#结尾").fadeIn(2500);
+        $("#footer").fadeIn(4000);
+    });
 /*工具栏*/
 $("#game1_显示说明").click(function () {
     $("#解释汇总").fadeIn(500);
@@ -245,5 +343,10 @@ $("#game1_显示说明").click(function () {
     $("#game1_隐藏说明").click(function () {
         $("#解释汇总").fadeOut(500);
     });
-
+    $("#game2_显示说明").click(function () {
+        $("#污泥处理说明").fadeIn(500);
+    });
+    $("#game2_隐藏说明").click(function () {
+        $("#污泥处理说明").fadeOut(500);
+    });
 })

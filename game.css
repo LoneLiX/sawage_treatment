@@ -44,6 +44,13 @@
     top: 650px;
     width: 100vw;
 }
+.appear2
+{
+    position: relative;
+    left: 1vw;
+    top: 650px;
+    width: 100vw;
+}
 .drag_title
 {
     line-height: 25px;
@@ -79,8 +86,8 @@
 }
 
 
-.ui-tooltip, .arrow:after {
-    background-color: rgba(0, 0, 0, 0.4);
+.ui-tooltip {
+    background-color: rgba(0, 0, 0, 0.6);
     border: 2px solid white;
 }
 .ui-tooltip-content{
@@ -93,10 +100,15 @@
     font:bold 14px "Helvetica Neue", Sans-Serif;
     text-transform: uppercase;
     box-shadow: 0 0 7px rgba(0,0,0,0.75);
+    z-index: 100;
 }
 #dragstep3-1_button
 {
-    margin-top: 225px;
+    margin-top: 250px;
+}
+#dragstep1_button
+{
+    margin-top:280px;
 }
 /*.arrow {
     width: 70px;
