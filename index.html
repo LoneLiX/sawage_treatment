@@ -29,27 +29,30 @@
             text-align: justify;
             color: #3d3d40;
         }
-        #game1
-        {
+        #game1 {
             height: 90vh;
         }
-        .ui.text.container
-        {
+        .ui.text.container {
            padding:1.5em;
             background-color: rgba(186,227,255,0.13);
         }
-        .mainPara
-        {
+        .mainPara {
             text-indent: 2em;
         }
         .step_ip       /*解释类*/
         {
             margin-top: 700px;
         }
+        #解释汇总 {
+            margin-top: 50px;
+        }
+        .interpret_para
+        {
+            display: none;
+        }
 
         @media screen and (max-width: 700px) {
-            #game1
-            {
+            #game1 {
                 height: 750px;
             }
             .background{
@@ -61,49 +64,50 @@
                 height: 400px;
                 margin-top: auto;
             }
-            .layer
-            {
+            .layer {
                 position:absolute;
                 z-index: 1;
                 display: block;
                 margin-left: 5vw;
                 width: 90vw;
-                height: 450px;
+                height: 400px;
                 margin-top: auto;
                 opacity: 0;
             }
-            #drag
-            {
+            #drag {
                 position: relative;
                 width: 30vw;
             }
-            .appear
-            {
+            .appear {
                 position: absolute;
                 left: 1vw;
                 top: 450px;
                 width: 100vw;
             }
-            .step_1_element
-            {
+            .step_1_element {
                 width: 150px;
                 margin: 15px;
                 left: 25px;
             }
-            .step3-1_element
-            {
+            .step3-1_element {
                 width: 100px;
                 margin: 15px;
                 left: 10px;
             }
-            .step_ip       /*解释类*/
-            {
+            .step_ip       /*解释类*/{
                 margin-top: 500px;
             }
-            #dragstep3-1_button
-            {
+            #dragstep3-1_button {
                 margin-top: 200px;
             }
+            #解释汇总 {
+                margin-top: 50px;
+            }
+            .interpret_para
+            {
+                display: none;
+            }
+
         }
     </style>
     <title>Title</title>
@@ -131,9 +135,54 @@
     <div id="s_t" style="display: block">
         <div id="game_control" style="text-align: center">
             <p id="game_title" class="Titles">污水资源化</p>
-            <button type="reset" class="ui large grey basic button">重新开始</button>
-            <button type="reset" class="ui large grey basic button">隐藏说明</button>
-            <button type="reset" class="ui large grey basic button">显示说明</button>
+            <button type="reset" class="ui large grey basic button" id="game1_重新开始">重新开始</button>
+            <button type="reset" class="ui large grey basic button" id="game1_显示说明">显示说明</button>
+            <button type="reset" class="ui large grey basic button" id="game1_隐藏说明">隐藏说明</button>
+        </div>
+        <div class="ui text container ui raised segment" id="解释汇总" style="display: none">
+            <div id="解释汇总_预处理" class="interpret_para">
+                <h3 style="margin-top: 22px">预处理：</h3>
+                <p>预处理工艺通常包括格栅处理和沉砂处理</p>
+                <p>格栅处理的目的是截流大块物质以保护后续水泵管线、设备的正常运行。</p>
+                <p>沉砂处理的目的是沉降污水中裹携的砂、石与大块颗粒物，防止造成设施淤砂，造成磨损堵塞，影响管线设备的正常运行。</p>
+            </div>
+            <div id="解释汇总_一级处理" class="interpret_para">
+                <h3 style="margin-top: 22px">一级处理：</h3>
+                <p>一级处理工艺主要是初级沉淀池，目的是将污水中悬浮物尽可能地沉降去除，一般初次沉淀池可去除城市污水中约 25% 的 BOD5（五日生化需氧量）以及近 50% 的 SS（悬浮物）。</p>
+            </div>
+            <div id="解释汇总_二级处理" class="interpret_para">
+                <h3 style="margin-top: 22px" id="解释汇总_二级处理二选一">
+                    城市污水二级处理多采用生物处理技术，主要目的是去除水中不可沉悬浮物或生物可分解特性的有机物。
+                    生物处理技术大致可分为两种：活性污泥处理法和生物膜法。
+                </h3>
+                <div id="解释汇总_活性污泥处理法" class="interpret_para">
+                    <h3 style="margin-top: 22px">二级处理:活性污泥处理法</h3>
+                    <p>活性污泥处理法的原理：在人工充氧非常充足的条件下，将污水和一些微生物一起培养，形成活性污泥，然后利用污泥中生物的凝聚、氧化等作用除去有机污染物。</p>
+                    <p>曝气池的目的是通过曝气溶解空气中更多的氧气，促使污水中的有机污染物被微生物氧化分解而降解。</p>
+                </div>
+                <div id="解释汇总_生物膜法" class="interpret_para">
+                    <h3 style="margin-top: 22px">二级处理：活性污泥处理法</h3>
+                    <p>
+                        生物膜法的原理：在池内设置微生物生长聚集的载体（一般称填料），在充氧的条件下，微生物在填料表面聚附着形成生物膜，吸附流动的污水层的浓度较高的有机物，由外层的好氧层的好氧菌将其分解，里层是厌氧菌层，流动着的污水又会不断洗刷厌氧层过厚老化的生物膜，使生物膜生长出新的生物膜，如此反复达到固液分离、净化污水的目的。
+                    </p>
+                    <p>
+                        生物膜反应池的作用是通过微生物的氨化、硝化和反硝化作用，将污水中的氮转化成氨气释放到空气中。
+                    </p>
+                </div>
+                <div id="解释汇总_三级处理" class="interpret_para">
+                    <h3 style="margin-top: 22px">三级处理：</h3>
+                    <p>活性炭和絮凝剂：除去水中的氮磷</p>
+                    <p>臭氧或氯气：消毒</p>
+                    <abbr></abbr>
+                    <p>经过三级处理后的水便可作为送至中间水道冲厕、喷洒街道、绿化带、工业用水、消防等水源。</p>
+                    <p style="font-weight: bold">经过三级处理的水就可以进行污水回用了：</p>
+                    <p>（1）补充水源：用于补充地表水和地下水。补充河流、湖泊以及补给、防止海水入侵等。</p>
+                    <p>（2）景观环境用水：用于观赏性景观环境用水，娱乐性景观环境用水，湿地环境用水。</p>
+                    <p>（3）工业用水：用于洗涤用水，锅炉用水以及工艺用水。</p>
+                    <p>（4）城镇杂用水：用于冲厕、街道清扫，各种车辆冲洗，建筑施工、混凝土养护与制备，消防用水等。</p>
+                    <p>（5）农林牧副业用水：用于农田灌溉，造林育苗，淡水养殖，园林绿化等。</p>
+                </div>
+            </div>
         </div>
         <div id="images" class="game_process">
             <img src="images/basic/_0002_背景.png" id="背景" class="background drop ui-droppable">
@@ -161,11 +210,12 @@
             <img src="images/basic/_0001s_0001_微生物.png" id="step4_2_微生物" class="layer drop ui-droppable">
             <img src="images/basic/_0001s_0000_气泡.png" id="step4_2_气泡" class="layer drop ui-droppable">
             <img src="images/basic/_0000s_0000_三级处理反应池.png" id="step5_三级反应处理池" class="layer drop ui-droppable">
-            <img src="images/basic/_0000s_0001_管道-拷贝.png" id="step5_管道" class="layer drop ui-droppable">
-            <img src="images/basic/_0000s_0005_污泥处理池.png" id="step5_污泥处理池" class="layer drop ui-droppable">
-            <img src="images/basic/_0000s_0002_污泥-拷贝-2.png" id="step5_污泥1" class="layer drop ui-droppable">
-            <img src="images/basic/_0000s_0003_污泥-拷贝.png" id="step5_污泥2" class="layer drop ui-droppable">
-            <img src="images/basic/_0000s_0004_污泥.png" id="step5_污泥3" class="layer drop ui-droppable">
+            <img src="images/basic/_0000s_0005_污泥处理池.png" id="step5_污泥处理池" class="layer drop ui-droppable" style="opacity: 1;display: none">
+            <img src="images/basic/_0000s_0002_污泥-拷贝-2.png" id="step5_污泥1" class="layer drop ui-droppable" style="opacity: 1;display: none">
+            <img src="images/basic/_0000s_0003_污泥-拷贝.png" id="step5_污泥2" class="layer drop ui-droppable" style="opacity: 1; display: none">
+            <img src="images/basic/_0000s_0004_污泥.png" id="step5_污泥3" class="layer drop ui-droppable" style="opacity: 1;display: none">
+            <img src="images/basic/_0000s_0001_管道-拷贝.png" id="step5_管道" class="layer drop ui-droppable" style="opacity: 1;display: none">
+            <img src="images/basic/_0005s_0002_排出的水（颜色根据操作变化）.png" id="最终排水" class="layer drop ui-droppable">
             <!--顺序很重要-->
         </div>
         <div id="drag">
@@ -211,9 +261,9 @@
                     步骤3:二级处理-活性污泥处理法
                 </div>
                 <div id="step3-1_拖动区" >
-                    <img src="images/element/曝气池.png" id="step3-1_e曝气池"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
-                    <img src="images/element/鼓风装置.png" id="step3-1_e鼓风装置"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
-                    <img src="images/element/微生物.png" id="step3-1_e微生物"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
+                    <img src="images/element/曝气池.png" id="step3-1_e曝气池"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="曝气池">
+                    <img src="images/element/鼓风装置.png" id="step3-1_e鼓风装置"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="鼓风装置">
+                    <img src="images/element/微生物.png" id="step3-1_e微生物"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="微生物">
                 </div>
                 <div id="dragstep3-1_button" style="text-align: center; ">
                     <button class= "ui grey basic button">确定</button>
@@ -225,11 +275,25 @@
                     步骤3:二级处理-生物膜法
                 </div>
                 <div id="step3-2_拖动区" >
-                    <img src="images/element/生物膜反应池.png" id="step3-2_e生物膜反应池"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
-                    <img src="images/element/生物膜.png" id="step3-2_e生物膜"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
-                    <img src="images/element/微生物.png" id="step3-2_e微生物"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px">
+                    <img src="images/element/生物膜反应池.png" id="step3-2_e生物膜反应池"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="生物膜反应池">
+                    <img src="images/element/生物膜.png" id="step3-2_e生物膜"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="生物膜反应器">
+                    <img src="images/element/微生物.png" id="step3-2_e微生物"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="微生物">
                 </div>
                 <div id="dragstep3-2_button" style="text-align: center; margin-top: 225px">
+                    <button class= "ui grey basic button">确定</button>
+                </div>
+            </div>
+            <div id="step4" class="appear" style="display: none">
+                <div class="drag_title">
+                    步骤4：三级处理
+                </div>
+                <div id="step4_拖动区">
+                    <img src="images/element/活性炭.png" id="step4_e活性炭"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="活性炭">
+                    <img src="images/element/絮凝剂.png" id="step4_e絮凝剂"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="絮凝剂">
+                    <img src="images/element/臭氧.png" id="step4_e臭氧"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="这是臭氧，臭氧和氯气二选一就可以哦">
+                    <img src="images/element/氯气.png" id="step4_e氯气"class="element step3-1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="这是氯气，氯气和臭氧二选一就可以哦">
+                </div>
+                <div id="dragstep4_button" style="text-align: center; margin-top: 250px">
                     <button class= "ui grey basic button">确定</button>
                 </div>
             </div>
@@ -322,6 +386,73 @@
                 <div id="排放2_确定" style="text-align: center; margin-top: 15px">
                     <button class= "ui large grey basic button" id="排放2_三级处理确定">进行三级处理!</button>
                 </div>
+            </div>
+            <div id="step4_三级处理" class="ui text container ui raised segment" style="display:none">
+                <p>活性炭和絮凝剂：除去水中的氮磷</p>
+                <p>臭氧或氯气：消毒</p>
+                <abbr></abbr>
+                <p>经过三级处理后的水便可作为送至中间水道冲厕、喷洒街道、绿化带、工业用水、消防等水源。</p>
+                <p style="font-weight: bold">经过三级处理的水就可以进行污水回用了：</p>
+                <p>（1）补充水源：用于补充地表水和地下水。补充河流、湖泊以及补给、防止海水入侵等。</p>
+                <p>（2）景观环境用水：用于观赏性景观环境用水，娱乐性景观环境用水，湿地环境用水。</p>
+                <p>（3）工业用水：用于洗涤用水，锅炉用水以及工艺用水。</p>
+                <p>（4）城镇杂用水：用于冲厕、街道清扫，各种车辆冲洗，建筑施工、混凝土养护与制备，消防用水等。</p>
+                <p>（5）农林牧副业用水：用于农田灌溉，造林育苗，淡水养殖，园林绿化等。</p>
+                <div id="game1_下一步" style="text-align: center; margin-top: 15px">
+                    <button class= "ui large grey basic button" id="污泥处理">继续</button>
+                </div>
+            </div>
+            <div id="回顾game1" style="display: none">
+                <div class="ui text container ui raised segment" id="解释汇总2" style="display: none">
+                    <div id="最后出现的段落" style="display: none">
+                        <h2>让我们回顾一下从污水到可用水的过程吧：</h2>
+                    </div>
+                    <div id="解释汇总2_预处理" class="interpret_para">
+                        <h3 style="margin-top: 22px">预处理：</h3>
+                        <p>预处理工艺通常包括格栅处理和沉砂处理</p>
+                        <p>格栅处理的目的是截流大块物质以保护后续水泵管线、设备的正常运行。</p>
+                        <p>沉砂处理的目的是沉降污水中裹携的砂、石与大块颗粒物，防止造成设施淤砂，造成磨损堵塞，影响管线设备的正常运行。</p>
+                    </div>
+                    <div id="解释汇总2_一级处理" class="interpret_para">
+                        <h3 style="margin-top: 22px">一级处理：</h3>
+                        <p>一级处理工艺主要是初级沉淀池，目的是将污水中悬浮物尽可能地沉降去除，一般初次沉淀池可去除城市污水中约 25% 的 BOD5（五日生化需氧量）以及近 50% 的 SS（悬浮物）。</p>
+                    </div>
+                    <div id="解释汇总2_二级处理" class="interpret_para">
+                        <h3 style="margin-top: 22px" id="解释汇总2_二级处理二选一">
+                            城市污水二级处理多采用生物处理技术，主要目的是去除水中不可沉悬浮物或生物可分解特性的有机物。
+                            生物处理技术大致可分为两种：活性污泥处理法和生物膜法。
+                        </h3>
+                        <div id="解释汇总2_活性污泥处理法" class="interpret_para">
+                            <h3 style="margin-top: 22px">二级处理:活性污泥处理法</h3>
+                            <p>活性污泥处理法的原理：在人工充氧非常充足的条件下，将污水和一些微生物一起培养，形成活性污泥，然后利用污泥中生物的凝聚、氧化等作用除去有机污染物。</p>
+                            <p>曝气池的目的是通过曝气溶解空气中更多的氧气，促使污水中的有机污染物被微生物氧化分解而降解。</p>
+                        </div>
+                        <div id="解释汇总2_生物膜法" class="interpret_para">
+                            <h3 style="margin-top: 22px">二级处理：活性污泥处理法</h3>
+                            <p>
+                                生物膜法的原理：在池内设置微生物生长聚集的载体（一般称填料），在充氧的条件下，微生物在填料表面聚附着形成生物膜，吸附流动的污水层的浓度较高的有机物，由外层的好氧层的好氧菌将其分解，里层是厌氧菌层，流动着的污水又会不断洗刷厌氧层过厚老化的生物膜，使生物膜生长出新的生物膜，如此反复达到固液分离、净化污水的目的。
+                            </p>
+                            <p>
+                                生物膜反应池的作用是通过微生物的氨化、硝化和反硝化作用，将污水中的氮转化成氨气释放到空气中。
+                            </p>
+                        </div>
+                        <div id="解释汇总2_三级处理" class="interpret_para">
+                            <h3 style="margin-top: 22px">三级处理：</h3>
+                            <p>活性炭和絮凝剂：除去水中的氮磷</p>
+                            <p>臭氧或氯气：消毒</p>
+                            <abbr></abbr>
+                            <p>经过三级处理后的水便可作为送至中间水道冲厕、喷洒街道、绿化带、工业用水、消防等水源。</p>
+                            <p style="font-weight: bold">经过三级处理的水就可以进行污水回用了：</p>
+                            <p>（1）补充水源：用于补充地表水和地下水。补充河流、湖泊以及补给、防止海水入侵等。</p>
+                            <p>（2）景观环境用水：用于观赏性景观环境用水，娱乐性景观环境用水，湿地环境用水。</p>
+                            <p>（3）工业用水：用于洗涤用水，锅炉用水以及工艺用水。</p>
+                            <p>（4）城镇杂用水：用于冲厕、街道清扫，各种车辆冲洗，建筑施工、混凝土养护与制备，消防用水等。</p>
+                            <p>（5）农林牧副业用水：用于农田灌溉，造林育苗，淡水养殖，园林绿化等。</p>
+                        </div>
+                    </div>
+                </div>
+                
+
             </div>
         </div>
 
