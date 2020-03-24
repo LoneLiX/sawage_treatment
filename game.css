@@ -57,6 +57,9 @@
     font-family: "黑体", serif;
     margin-left: 10vw;
     line-height: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
 }
 #step1_拖动区
 {
