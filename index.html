@@ -90,7 +90,29 @@
             line-height: 1.6;
             text-align: justify;
         }
-
+        @keyframes myappear {
+            0%{opacity: 0}
+            100%{opacity: 1}
+        }
+        .basic_appear{
+            animation: myappear 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes myhide {
+            0%{opacity: 0}
+            100%{opacity: 1}
+        }
+        .basic_hide{
+            animation: myappear 1.5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        .step污泥1_element {
+            width: 150px;
+            margin: 15px;
+            left: 25px;
+        }
         @media screen and (max-width: 750px) {
             #game1 {
                 height: 750px;
@@ -105,7 +127,7 @@
                 display: block;
                 margin-left: 5vw;
                 width: 90vw;
-                height: 400px;
+                height: 360px;/*400*/
                 margin-top: auto;
             }
             .layer {
@@ -114,7 +136,17 @@
                 display: block;
                 margin-left: 5vw;
                 width: 90vw;
-                height: 400px;
+                height: 360px;
+                margin-top: auto;
+                opacity: 0;
+            }
+            .layer2{
+                position:absolute;
+                z-index: 1;
+                display: block;
+                margin-left: 5vw;
+                width: 90vw;
+                height: 330px;
                 margin-top: auto;
                 opacity: 0;
             }
@@ -125,13 +157,14 @@
             .appear {
                 position: absolute;
                 left: 1vw;
-                top: 450px;
+                top: 350px;
                 width: 100vw;
             }
             .appear2{
                 position: relative;
                 left: 1vw;
                 top: 450px;
+                top: 300px;
                 width: 100vw;
             }
             .step_1_element {
@@ -144,19 +177,27 @@
                 margin: 15px;
                 left: 10px;
             }
+            .step污泥1_element{
+                width: 100px;
+                margin: 15px;
+                left: 25px;
+            }
             .step_ip       /*解释类*/{
-                margin-top: 500px;
+                margin-top: 400px;
             }
             #dragstep1_button
             {
                 margin-top:260px;
+            }
+            #dragstep2_button{
+                margin-top: 230px;
             }
             #dragstep3-1_button {
                 margin-top: 200px;
             }
             .game2_button
             {
-                margin-top:280px;
+                margin-top:200px;
             }
             #解释汇总 {
                 margin-top: 50px;
@@ -167,15 +208,15 @@
             }
             #污泥处理1_interpret
             {
-                margin-top: 400px;
+                margin-top: 300px;
             }
             #污泥处理2_interpret
             {
-                margin-top: 320px;
+                margin-top: 300px;
             }
             #污泥处理3_interpret
             {
-                margin-top: 320px;
+                margin-top: 300px;
             }
 
         }
@@ -190,7 +231,7 @@
     <p class="mainPara">
         如果你生活在水资源丰富的地区，可能就感觉不到用水难带来的困扰，
         实际上，我国的人均水资源量仅为世界平均水平的<span style="color: #FF4500">1/4</span> ，是全球人均水资源<span style="color: #FF4500">最贫乏</span>的国家之一，
-        约<span style="color: #FF4500">400座城市以及广大农村地区</span>>因各种原因处于缺水状态。
+        约<span style="color: #FF4500">400座城市以及广大农村地区</span>因各种原因处于缺水状态。
     </p>
     <p class="mainPara">
         目前，生活生产的用水量和污水排放量双双迅速增长，带来了水资源日益紧缺，环境治理难度增加等问题。污水在很多人的眼里更是污染的<b>“罪魁祸首”、“百害而无一利”。</b>
@@ -209,9 +250,9 @@
     <div id="s_t" style="display: block">
         <div id="game_control" style="text-align: center">
             <p id="game_title" class="Titles"><span style="color: #808000">污水</span><span style="color: #00BFFF">资源化</span></p>
-            <button type="reset" class="ui large blue button" id="game1_重新开始">重新开始</button>
-            <button type="reset" class="ui large grey button" id="game1_显示说明">显示说明</button>
-            <button type="reset" class="ui large grey button" id="game1_隐藏说明">隐藏说明</button>
+            <button type="reset" class="ui blue button" id="game1_重新开始">重新开始</button>
+            <button type="reset" class="ui grey button" id="game1_显示说明">显示说明</button>
+            <button type="reset" class="ui grey button" id="game1_隐藏说明">隐藏说明</button>
         </div>
         <div class="ui text container ui raised segment" id="解释汇总" style="display: none">
             <div id="解释汇总_预处理" class="interpret_para">
@@ -284,11 +325,12 @@
             <img src="images/basic/_0001s_0001_微生物.png" id="step4_2_微生物" class="layer drop ui-droppable">
             <img src="images/basic/_0001s_0000_气泡.png" id="step4_2_气泡" class="layer drop ui-droppable">
             <img src="images/basic/_0000s_0000_三级处理反应池.png" id="step5_三级反应处理池" class="layer drop ui-droppable">
-            <img src="images/basic/_0000s_0005_污泥处理池.png" id="step5_污泥处理池" class="layer drop ui-droppable" style="opacity: 1;display: none">
+            <img src="images/basic/_0000s_0001_污泥组件.png" id="step5_污泥处理组件" class="layer drop ui-droppable">
+            <!--<img src="images/basic/_0000s_0005_污泥处理池.png" id="step5_污泥处理池" class="layer drop ui-droppable" style="opacity: 1;display: none">
             <img src="images/basic/_0000s_0002_污泥-拷贝-2.png" id="step5_污泥1" class="layer drop ui-droppable" style="opacity: 1;display: none">
             <img src="images/basic/_0000s_0003_污泥-拷贝.png" id="step5_污泥2" class="layer drop ui-droppable" style="opacity: 1; display: none">
             <img src="images/basic/_0000s_0004_污泥.png" id="step5_污泥3" class="layer drop ui-droppable" style="opacity: 1;display: none">
-            <img src="images/basic/_0000s_0001_管道-拷贝.png" id="step5_管道" class="layer drop ui-droppable" style="opacity: 1;display: none">
+            <img src="images/basic/_0000s_0001_管道-拷贝.png" id="step5_管道" class="layer drop ui-droppable" style="opacity: 1;display: none">-->
             <img src="images/basic/_0000_点击1.png" id="下右提示" class="layer drop ui-droppable animated infinite bounce" style="opacity:0.8; display: none">
             <img src="images/basic/_0001_点击1.png" id="下左提示" class="layer drop ui-droppable animated infinite bounce" style="opacity:0.8; display: none">
             <img src="images/basic/_0002_点击1.png" id="上右提示" class="layer drop ui-droppable animated infinite bounce" style="opacity:0.8; display: none">
@@ -319,7 +361,7 @@
                 <div id="step2_拖动区" style="width:100vw;">
                     <img src="images/element/沉淀池.png" id="step2_e沉淀池"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="沉淀池">
                 </div>
-                <div id="dragstep2_button" style="text-align: center; margin-top: 310px">
+                <div id="dragstep2_button" style="text-align: center;">
                     <button class= "ui large blue button">确定</button>
                 </div>
             </div>
@@ -561,8 +603,8 @@
             <div id="Sludge_treatment" style="display: block">
                 <div id="game2_control" style="text-align: center">
                     <p id="game2_title" class="Titles">污泥资源化</p>
-                    <button type="reset" class="ui large grey basic button" id="game2_显示说明">显示说明</button>
-                    <button type="reset" class="ui large grey basic button" id="game2_隐藏说明">隐藏说明</button>
+                    <button type="reset" class="ui grey basic button" id="game2_显示说明">显示说明</button>
+                    <button type="reset" class="ui grey basic button" id="game2_隐藏说明">隐藏说明</button>
                 </div>
                 <div id="污泥处理说明" class="ui text container ui raised segment" style="display: none">
                     <div id="污泥变甲烷" style="display: none">
@@ -579,16 +621,14 @@
                     </div>
                 </div>
                 <div id="污泥处理图片" class="game2_images">
-                    <img src="images/basic2/未标题-1_0009_污泥处理池.png" id="污泥处理池" class="layer drop ui-droppable">
-                    <img src="images/basic2/未标题-1_0000_污泥-拷贝-2.png" id="污泥1" class="layer drop ui-droppable">
-                    <img src="images/basic2/未标题-1_0001_污泥-拷贝.png" id="污泥2" class="layer drop ui-droppable">
-                    <img src="images/basic2/未标题-1_0002_污泥.png" id="污泥3" class="layer drop ui-droppable">
-                    <img src="images/basic2/未标题-1_0003_化肥.png" id="化肥" class="layer drop ui-droppable">
-                    <img src="images/basic2/未标题-1_0004_甲烷.png" id="甲烷" class="layer drop ui-droppable">
-                    <img src="images/basic2/未标题-1_0005_无氧加热器.png" id="无氧加热器" class="layer drop ui-droppable">
-                    <img src="images/basic2/未标题-1_0006_热能.png" id="热能" class="layer drop ui-droppable">
-                    <img src="images/basic2/未标题-1_0008_发酵装置.png" id="发酵装置" class="layer drop ui-droppable">
-                    <img src="images/basic2/未标题-1_0007_点击1.png" id="污泥点击提示" class="layer drop ui-droppable animated infinite bounce">
+                    <img src="images/basic2/未标题-1_0009_污泥处理池.png" id="污泥处理池" class="layer2 drop ui-droppable">
+                    <img src="images/basic2/_0000_污泥.png" id="污泥1" class="layer2 drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0003_化肥.png" id="化肥" class="layer2 drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0004_甲烷.png" id="甲烷" class="layer2 drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0005_无氧加热器.png" id="无氧加热器" class="layer2 drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0006_热能.png" id="热能" class="layer2 drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0008_发酵装置.png" id="发酵装置" class="layer2 drop ui-droppable">
+                    <img src="images/basic2/未标题-1_0007_点击1.png" id="污泥点击提示" class="layer2 drop ui-droppable animated infinite bounce">
                 </div>
                 <div id="drag2">
                     <div id="污泥处理1" class="appear2" style="display: none" >
@@ -596,9 +636,9 @@
                             污泥->甲烷
                         </div>
                         <div id="污泥处理1_拖动区" style="width: 100vw;">
-                            <img src="images/element/污泥.png" id="污泥处理1_e污泥"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="污泥">
-                            <img src="images/element/兼性菌.png" id="污泥处理1_e兼性菌"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="兼性菌">
-                            <img src="images/element/厌氧细菌.png" id="污泥处理1_e厌氧细菌"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="厌氧细菌">
+                            <img src="images/element/污泥.png" id="污泥处理1_e污泥"class="element step污泥1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="污泥">
+                            <img src="images/element/兼性菌.png" id="污泥处理1_e兼性菌"class="element step污泥1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="兼性菌">
+                            <img src="images/element/厌氧细菌.png" id="污泥处理1_e厌氧细菌"class="element step污泥1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="厌氧细菌">
                         </div>
                         <div id="污泥处理1_button" class="game2_button"style="text-align: center;">
                             <button class= "ui large yellow button">反应！</button>
@@ -609,7 +649,7 @@
                             污泥->热能
                         </div>
                         <div id="污泥处理2_拖动区" style="width: 100vw;">
-                            <img src="images/element/污泥.png" id="污泥处理2_e污泥"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="污泥">
+                            <img src="images/element/污泥.png" id="污泥处理2_e污泥"class="element step污泥1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="污泥">
                         </div>
                         <div id="污泥处理2_button" class="game2_button"style="text-align: center;">
                             <button class= "ui large red button">反应！</button>
@@ -620,8 +660,8 @@
                             污泥->化肥
                         </div>
                         <div id="污泥处理3_拖动区" style="width: 100vw;">
-                            <img src="images/element/污泥.png" id="污泥处理3_e污泥"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="污泥">
-                            <img src="images/element/粉煤灰.png" id="污泥处理3_e粉煤灰"class="element step_1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="粉煤灰">
+                            <img src="images/element/污泥.png" id="污泥处理3_e污泥"class="element step污泥1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="污泥">
+                            <img src="images/element/粉煤灰.png" id="污泥处理3_e粉煤灰"class="element step污泥1_element ui-draggable ui-draggable-handle" style="position: relative; top: 0px" title="粉煤灰">
                         </div>
                         <div id="污泥处理3_button" class="game2_button"style="text-align: center;">
                             <button class= "ui large brown button">继续</button>
@@ -688,6 +728,9 @@
                                 <div class="eight wide column" id="参考资料">
 <pre class="footer">
 <strong>参考资料：</strong>
+徐剑桥. 城市污水资源化与水资源循环利用的思考与探索
+张强. 城市污水回用方式及资源化处理
+陈皓琪. 城市污水资源化及再利用技术探析
 </pre>
 <pre class="footer">
 <b>文案：</b>

@@ -25,10 +25,20 @@
 }
 .layer {
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     display: block;
     margin-left: 15vw;
     width: 70vw;
+    height: 700px;
+    margin-top: auto;
+    opacity: 0;
+}
+.layer2 {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    margin-left: 5vw;
+    width: 90vw;
     height: 700px;
     margin-top: auto;
     opacity: 0;
@@ -112,6 +122,9 @@
 #dragstep1_button
 {
     margin-top:280px;
+}
+#dragstep2_button{
+    margin-top: 310px
 }
 /*.arrow {
     width: 70px;

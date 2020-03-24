@@ -1,4 +1,4 @@
-$( document ).tooltip({
+/*$( document ).tooltip({
     position: {
         my: "center top-10",
         at: "center top",
@@ -11,9 +11,10 @@ $( document ).tooltip({
                 .appendTo( this );
         }
     }
-});
+});*/
 $(function () {
-        $(".element").draggable({ revert: "invalid",
+        $(".element").draggable({
+            revert: "invalid",
             cursor: "pointer",
             scroll:false
         });
@@ -24,67 +25,59 @@ $(function () {
                 var elements = sourceElement.attr("id");
 
                 if (elements === "step1_e栅格") {
-                    $("#流出污水").animate({opacity: 0}, true);
-                    $("#step1_栅格").animate({opacity: 1}, true);
-                    $("#初始污水容器").animate({opacity: 0}, true);
-                    $("#step1_污水流入").animate({opacity: 1}, true);
-                    $("#step1_过滤石头1").animate({opacity: 1}, true);
-                    $("#step1_过滤石头2").animate({opacity: 1}, true);
-                    $("#step1_过滤石头3").animate({opacity: 1}, true);
+                    $("#流出污水").animate({opacity: "0",zIndex:"1000"});
+                    $("#step1_栅格").animate({opacity: "1",zIndex:"1000"});
+                    $("#初始污水容器").animate({opacity: "0",zIndex:"1000"});
+                    $("#step1_污水流入").animate({opacity: "1",zIndex:"1000"});
+                    $("#step1_过滤石头1").animate({opacity: "1",zIndex:"1000"});
+                    $("#step1_过滤石头2").animate({opacity: "1",zIndex:"1000"});
+                    $("#step1_过滤石头3").animate({opacity: "1",zIndex:"1000"});
                     $("#上左提示").fadeOut(500);
                     $("#step1_e栅格").remove()
                     }
                 else if (elements === "step1_e沉砂池") {
-                    $("#step2_沉沙处理").animate({opacity: 1}, true);
+                    $("#step2_沉沙处理").animate({opacity: "1",zIndex:"1000"});
                     $("#上中提示").fadeOut(500);
                     $("#step1_e沉砂池").remove()
                     }
                 else if(elements==="step2_e沉淀池") {
-                    $("#step3_沉淀池").animate({opacity:1},true);
-                    $("#step3_沉淀物").animate({opacity:1},true);
+                    $("#step3_沉淀池").animate({opacity: "1",zIndex:"1000"});
+                    $("#step3_沉淀物").animate({opacity: "1",zIndex:"1000"});
                     $("#上右提示").fadeOut(500);
                     $("#step2_e沉淀池").remove()
                 }
                 else if(elements==="step3-1_e曝气池") {
-                   $("#step4_1_曝气池").animate({opacity:1});
+                   $("#step4_1_曝气池").animate({opacity: "1",zIndex:"1000"});
                     $("#下右提示").fadeOut(500);
                    $("#step3-1_e曝气池").remove();
                 }
                 else if(elements==="step3-1_e鼓风装置") {
-                    $("#step4_1_鼓风装置").animate({opacity:1});
-                    $("#step4_1_气泡").animate({opacity:1},1000);
+                    $("#step4_1_鼓风装置").animate({opacity:1,zIndex:1000});
+                    $("#step4_1_气泡").animate({opacity:1,zIndex:1000});
                     $("#下右提示").fadeOut(500);
                     $("#step3-1_e鼓风装置").remove();
                 }
                 else if(elements==="step3-1_e微生物"){
-                    $("#step4_1_微生物").animate({opacity:1});
+                    $("#step4_1_微生物").animate({opacity:1,zIndex:1000});
                     $("#下右提示").fadeOut(500);
-                    $("#step5_污泥处理池").show();
-                    $("#step5_污泥1").show();
-                    $("#step5_污泥2").show();
-                    $("#step5_污泥3").show();
-                    $("#step5_管道").show();
+                    $("#step5_污泥处理组件").animate({opacity:1,zIndex:1000});
                     $("#step3-1_e微生物").remove();
                 }
                 else if(elements==="step3-2_e生物膜反应池") {
-                    $("#step4_2_生物膜反应池").animate({opacity:1});
+                    $("#step4_2_生物膜反应池").animate({opacity:1,zIndex:1000});
                     $("#下右提示").fadeOut(500);
                     $("#step3-2_e生物膜反应池").remove();
                 }
                 else if(elements==="step3-2_e生物膜") {
-                    $("#step4_2_生物膜反应器").animate({opacity:1});
+                    $("#step4_2_生物膜反应器").animate({opacity:1,zIndex:1000});
                     $("#下右提示").fadeOut(500);
                     $("#step3-2_e生物膜").remove();
                 }
                 else if(elements==="step3-2_e微生物") {
-                    $("#step4_2_微生物").animate({opacity:1});
-                    $("#step4_2_气泡").animate({opacity:1},1000);
+                    $("#step4_2_微生物").animate({opacity:1,zIndex:1000});
+                    $("#step4_2_气泡").animate({opacity:1,zIndex:1000},1000);
                     $("#下右提示").fadeOut(500);
-                    $("#step5_污泥处理池").show();
-                    $("#step5_污泥1").show();
-                    $("#step5_污泥2").show();
-                    $("#step5_污泥3").show();
-                    $("#step5_管道").show();
+                    $("#step5_污泥处理组件").animate({opacity:1,zIndex:1000});
                     $("#step3-2_e微生物").remove();
                 }
                 else if(elements==="step4_e活性炭")
@@ -110,9 +103,7 @@ $(function () {
                     $("#step4_e臭氧").hide();
                 }
                 else if(elements==="污泥处理1_e污泥"){
-                    $("#污泥1").animate({opacity:1});
-                    $("#污泥2").animate({opacity:1});
-                    $("#污泥3").animate({opacity:1});
+                    $("#污泥1").animate({opacity:1,zIndex:1000});
                     $("#污泥点击提示").hide();
                     $("#污泥处理1_e污泥").fadeOut(500);
                 }
@@ -249,7 +240,7 @@ $(function () {
     $("#3-1_三级处理").click(function () {
         $("#step3-1_活性污泥处理法").fadeOut(500);
         $("#step3_1").fadeOut(500);
-        $("#step5_三级反应处理池").animate({opacity:1});
+        $("#step5_三级反应处理池").animate({opacity:1,zIndex:1000});
         $("#下左提示").fadeIn(1000);
         $("#step4").fadeIn(1000);
         $("#解释汇总_活性污泥处理法").show();
@@ -258,7 +249,7 @@ $(function () {
     $("#3-2_三级处理").click(function () {
         $("#step3-2_生物膜法").fadeOut(500);
         $("#step3_2").fadeOut(500);
-        $("#step5_三级反应处理池").animate({opacity:1});
+        $("#step5_三级反应处理池").animate({opacity:1,zIndex:1000});
         $("#下左提示").fadeIn(1000);
         $("#step4").fadeIn(1000);
         $("#解释汇总_生物膜法").show();
@@ -267,7 +258,7 @@ $(function () {
     $("#排放2_确定").click(function () {
         $("#排放2").fadeOut(500);
         $("#排放").fadeOut(500)
-        $("#step5_三级反应处理池").animate({opacity:1});
+        $("#step5_三级反应处理池").animate({opacity:1,zIndex:1000});
         $("#下左提示").fadeIn(1000);
         $("#step4").fadeIn(1000);
     });
@@ -289,8 +280,8 @@ $(function () {
     $("#污泥_甲烷确定").click(function () {
         $("#污泥处理选择").hide();
         $("#game2").show();
-        $("#污泥处理池").animate({opacity:1});
-        $("#污泥点击提示").animate({opacity:0.5});
+        $("#污泥处理池").animate({opacity:1,zIndex:1000});
+        $("#污泥点击提示").animate({opacity:0.5,zIndex:1000});
         $("#污泥处理1").fadeIn(1000);
     });
     $("#污泥处理1_button").click(function () {
@@ -298,9 +289,7 @@ $(function () {
         if(wncl1_nxt=="nonenonenone") {
             $("#污泥处理池").hide();
             $("#污泥1").hide();
-            $("#污泥2").hide();
-            $("#污泥3").hide();
-            $("#甲烷").animate({opacity:1});
+            $("#甲烷").animate({opacity:1,zIndex:1000});
             $("#污泥处理1_interpret").fadeIn(2000);
             $("#污泥处理1").hide();
         }
@@ -308,7 +297,7 @@ $(function () {
     $("#试试污泥热能").click(function () {
         $("#甲烷").hide();
         $("#污泥变甲烷").show();
-        $("#无氧加热器").animate({opacity:1});
+        $("#无氧加热器").animate({opacity:1,zIndex:1000});
         $("#污泥点击提示").show();
         $("#污泥处理1_interpret").hide();
         $("#污泥处理2").fadeIn(1000);
@@ -317,7 +306,7 @@ $(function () {
         var wncl2_nxt=$("#污泥处理2_e污泥").css("display")
         if(wncl2_nxt=="none") {
             $("#无氧加热器").hide();
-            $("#热能").animate({opacity:1});
+            $("#热能").animate({opacity:1,zIndex:1000});
             $("#污泥处理2_interpret").fadeIn(2000);
             $("#污泥处理2").hide();
         }
@@ -325,7 +314,7 @@ $(function () {
     $("#试试污泥化肥").click(function () {
         $("#热能").hide();
         $("#污泥变热能").show();
-        $("#发酵装置").animate({opacity:1});
+        $("#发酵装置").animate({opacity:1,zIndex:1000});
         $("#污泥点击提示").show();
         $("#污泥处理2_interpret").hide();
         $("#污泥处理3").fadeIn(1000);
@@ -335,7 +324,7 @@ $(function () {
         if(wncl3_nxt=="nonenone")
         {
             $("#发酵装置").hide();
-            $("#化肥").animate({opacity:1});
+            $("#化肥").animate({opacity:1,zIndex:1000});
             $("#污泥处理3_interpret").fadeIn(2000);
             $("#污泥处理3").hide();
         }

@@ -5,7 +5,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/game.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/basic2/未标题-1_0000_污泥-拷贝-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/basic2/未标题-1_0001_污泥-拷贝.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/basic2/未标题-1_0002_污泥.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/排放.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/继续处理.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outer.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +63,8 @@
       <workItem from="1584851261093" duration="30684000" />
       <workItem from="1584927651220" duration="13564000" />
       <workItem from="1584961237484" duration="29872000" />
-      <workItem from="1585014754969" duration="8628000" />
+      <workItem from="1585014754969" duration="10356000" />
+      <workItem from="1585043561489" duration="14327000" />
     </task>
     <servers />
   </component>
