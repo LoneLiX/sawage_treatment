@@ -3,7 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="85a512e7-2f96-4023-a601-183b750a79cc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/game.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/化肥.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/发酵装置.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/微生物.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/微生物.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/无氧加热器.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/曝气池.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/曝气池.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/栅格.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/栅格.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/氯气.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/氯气.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/沉淀池.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/沉淀池.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/沉砂池.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/沉砂池.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/活性炭.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/活性炭.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/热能.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/生物膜.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/生物膜.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/生物膜反应池.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/生物膜反应池.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/甲烷.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/絮凝剂.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/絮凝剂.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/臭氧.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/臭氧.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/element/鼓风装置.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/element/鼓风装置.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +75,8 @@
       <workItem from="1584927651220" duration="13564000" />
       <workItem from="1584961237484" duration="29872000" />
       <workItem from="1585014754969" duration="10356000" />
-      <workItem from="1585043561489" duration="16226000" />
+      <workItem from="1585043561489" duration="20348000" />
+      <workItem from="1585065032920" duration="6977000" />
     </task>
     <servers />
   </component>
