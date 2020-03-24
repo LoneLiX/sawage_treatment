@@ -25,13 +25,13 @@ $(function () {
                 var elements = sourceElement.attr("id");
 
                 if (elements === "step1_e栅格") {
-                    $("#流出污水").animate({opacity: "0",zIndex:"1000"});
-                    $("#step1_栅格").animate({opacity: "1",zIndex:"1000"});
-                    $("#初始污水容器").animate({opacity: "0",zIndex:"1000"});
-                    $("#step1_污水流入").animate({opacity: "1",zIndex:"1000"});
-                    $("#step1_过滤石头1").animate({opacity: "1",zIndex:"1000"});
-                    $("#step1_过滤石头2").animate({opacity: "1",zIndex:"1000"});
-                    $("#step1_过滤石头3").animate({opacity: "1",zIndex:"1000"});
+                    $("#流出污水").css("opacity","0");
+                    $("#step1_栅格").css("opacity","1");
+                    $("#初始污水容器").css("opacity","0");
+                    $("#step1_污水流入").css("opacity","1");
+                    $("#step1_过滤石头1").css("opacity","1");
+                    $("#step1_过滤石头2").css("opacity","1");
+                    $("#step1_过滤石头3").css("opacity","1");
                     $("#上左提示").fadeOut(500);
                     $("#step1_e栅格").remove()
                     }
